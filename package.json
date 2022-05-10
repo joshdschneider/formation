@@ -1,6 +1,6 @@
 {
   "name": "@joshdschneider/formation",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React component library.",
   "scripts": {
     "rollup": "rollup -c"
@@ -30,8 +30,5 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/joshdschneider"
-  },
-  "dependencies": {
-    "rollup-plugin-dts": "^4.2.1"
   }
 }
