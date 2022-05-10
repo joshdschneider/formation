@@ -1,6 +1,6 @@
 {
   "name": "@joshdschneider/formation",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React component library.",
   "scripts": {
     "rollup": "rollup -c"
@@ -16,7 +16,7 @@
     "react": "^17.0.2",
     "rollup": "^2.60.0",
     "rollup-plugin-dts": "^4.0.1",
-    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-scss": "^3.0.0",
     "sass": "^1.43.5",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
