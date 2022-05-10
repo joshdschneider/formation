@@ -21,7 +21,16 @@ export default [
         sourcemap: true,
       },
     ],
-    plugins: [postcss(), resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' })],
+    plugins: [
+      postcss({
+        use: 'sass',
+        minimize: true,
+        extensions: ['.scss', '.css'],
+      }),
+      resolve(),
+      commonjs(),
+      typescript({ tsconfig: './tsconfig.json' }),
+    ],
   },
   {
     input: 'dist/esm/types/index.d.ts',
