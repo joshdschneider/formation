@@ -1,7 +1,8 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
-import scss from 'rollup-plugin-scss';
+import postcss from 'rollup-plugin-postcss';
+import postcssImport from 'postcss-import';
 import dts from 'rollup-plugin-dts';
 
 const packageJson = require('./package.json');
@@ -21,7 +22,14 @@ export default [
         sourcemap: true,
       },
     ],
-    plugins: [resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' }), scss()],
+    plugins: [
+      resolve(),
+      commonjs(),
+      typescript({ tsconfig: './tsconfig.json' }),
+      postcss({
+        plugins: [postcssImport()],
+      }),
+    ],
   },
   {
     input: 'dist/esm/types/index.d.ts',
