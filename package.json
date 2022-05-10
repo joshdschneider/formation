@@ -1,5 +1,5 @@
 {
-  "name": "formation",
+  "name": "@joshdschneider/formation",
   "version": "0.0.1",
   "description": "React component library.",
   "scripts": {
@@ -8,15 +8,19 @@
   "author": "Josh Schneider",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.3",
-    "@rollup/plugin-node-resolve": "^13.2.0",
-    "@rollup/plugin-typescript": "^8.3.1",
-    "@types/react": "^18.0.3",
-    "react": "^18.0.0",
-    "rollup": "^2.70.1",
-    "rollup-plugin-postcss": "^4.0.2",
-    "sass": "^1.51.0",
-    "typescript": "^4.6.3"
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/react": "^17.0.34",
+    "css-loader": "^6.5.1",
+    "react": "^17.0.2",
+    "rollup": "^2.60.0",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-postcss": "^4.0.1",
+    "sass": "^1.43.5",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.4.4"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -26,5 +30,8 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/joshdschneider"
+  },
+  "dependencies": {
+    "rollup-plugin-dts": "^4.2.1"
   }
 }
