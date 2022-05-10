@@ -1,0 +1,95 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    spinner-color--default: $black,
+    spinner-color--primary: $blue3,
+    spinner-color--success: $green3,
+    spinner-color--warning: $orange3,
+    spinner-color--danger: $red3,
+    spinner-color--default--button: $black,
+    spinner-color--primary--button: $blue5,
+    spinner-color--success--button: $green5,
+    spinner-color--warning--button: $orange5,
+    spinner-color--danger--button: $red5,
+    spinner-color--default--button--minimal: $black,
+    spinner-color--primary--button--minimal: $blue1,
+    spinner-color--success--button--minimal: $green1,
+    spinner-color--warning--button--minimal: $orange1,
+    spinner-color--danger--button--minimal: $red1,
+  ),
+  dark: (
+    spinner-color--default: $white,
+    spinner-color--primary: $blue4,
+    spinner-color--success: $green4,
+    spinner-color--warning: $orange4,
+    spinner-color--danger: $red4,
+    spinner-color--default--button: $white,
+    spinner-color--primary--button: $white,
+    spinner-color--success--button: $white,
+    spinner-color--warning--button: $white,
+    spinner-color--danger--button: $white,
+    spinner-color--default--button--minimal: $white,
+    spinner-color--primary--button--minimal: $blue5,
+    spinner-color--success--button--minimal: $green5,
+    spinner-color--warning--button--minimal: $orange5,
+    spinner-color--danger--button--minimal: $red5,
+  ),
+);
+
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  border: 3px solid;
+  transition: $default-transition;
+
+  @include themify($themes) {
+    border-color: rgba(themed('spinner-color--default'), 0.3);
+    border-top-color: themed('spinner-color--default');
+  }
+}
+
+@each $intent in $intents {
+  .spinner--#{$intent} {
+    @include themify($themes) {
+      border-color: rgba(themed('spinner-color--#{$intent}'), 0.3);
+      border-top-color: themed('spinner-color--#{$intent}');
+    }
+  }
+}
+
+.button {
+  @each $intent in $intents {
+    .spinner--#{$intent} {
+      @include themify($themes) {
+        border-color: rgba(themed('spinner-color--#{$intent}--button'), 0.3);
+        border-top-color: themed('spinner-color--#{$intent}--button');
+      }
+    }
+  }
+}
+
+.button--minimal {
+  @each $intent in $intents {
+    .spinner--#{$intent} {
+      @include themify($themes) {
+        border-color: rgba(themed('spinner-color--#{$intent}--button--minimal'), 0.3);
+        border-top-color: themed('spinner-color--#{$intent}--button--minimal');
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
