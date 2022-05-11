@@ -1,0 +1,89 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    box-shadow: $box-shadow-light,
+    text-color: $black,
+    text-color--placeholder: $gray2,
+    background-color: $light-gray5,
+    background-color--active: $white,
+    border-color: $light-gray1,
+    border-color--primary: $blue2,
+    border-color--danger: $red3,
+    border-outline--primary: $blue5,
+  ),
+  dark: (
+    box-shadow: $box-shadow-dark,
+    text-color: $white,
+    text-color--placeholder: $gray4,
+    background-color: $dark-gray1,
+    background-color--active: $black,
+    border-color: $dark-gray4,
+    border-color--primary: $blue5,
+    border-color--danger: $red3,
+    border-outline--primary: $blue1,
+  ),
+);
+
+.textarea {
+  appearance: none;
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family;
+  font-size: $font-size--regular;
+  font-weight: 500;
+  font-style: normal;
+  text-align: left;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  white-space: nowrap;
+  border: 1px solid;
+  border-radius: $border-radius--regular;
+  width: inherit;
+  max-width: inherit;
+  margin: 0;
+  padding: 8px 12px;
+  transition: $default-transition;
+  cursor: text;
+
+  @include themify($themes) {
+    box-shadow: inset themed('box-shadow');
+    color: themed('text-color');
+    background-color: themed('background-color');
+    border-color: themed('border-color');
+  }
+
+  &:focus,
+  &:focus-within {
+    @include themify($themes) {
+      box-shadow: none;
+      background-color: themed('background-color--active');
+      border-color: themed('border-color--primary');
+      box-shadow: 0 0 0 2px themed('border-outline--primary');
+      outline: none;
+    }
+  }
+
+  &::placeholder {
+    @include themify($themes) {
+      color: themed('text-color--placeholder');
+    }
+  }
+}
+
+.textarea-size--small {
+  padding: 6px 10px;
+}
+
+.textarea-size--large {
+  font-size: $font-size--large;
+  padding: 12px 15px;
+  border-radius: $border-radius--large;
+}
+
+.textarea--noresize {
+  resize: none;
+}

@@ -1,0 +1,268 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    text-color--default: $black,
+    text-color--primary: $white,
+    text-color--success: $white,
+    text-color--warning: $white,
+    text-color--danger: $white,
+    background-color--default: $light-gray3,
+    background-color--primary: $blue3,
+    background-color--success: $green3,
+    background-color--warning: $orange3,
+    background-color--danger: $red3,
+    background-color--default--hover: $light-gray2,
+    background-color--primary--hover: $blue2,
+    background-color--success--hover: $green2,
+    background-color--warning--hover: $orange2,
+    background-color--danger--hover: $red2,
+    border-color--default: $light-gray1,
+    border-color--primary: $blue1,
+    border-color--success: $green1,
+    border-color--warning: $orange1,
+    border-color--danger: $red1,
+    box-shadow: 0 8px 24px rgb(0, 0, 0, .2),
+  ),
+  dark: (
+    text-color--default: $white,
+    text-color--primary: $white,
+    text-color--success: $white,
+    text-color--warning: $white,
+    text-color--danger: $white,
+    background-color--default: $dark-gray2,
+    background-color--primary: $blue2,
+    background-color--success: $green2,
+    background-color--warning: $orange2,
+    background-color--danger: $red2,
+    background-color--default--hover: $dark-gray3,
+    background-color--primary--hover: $blue3,
+    background-color--success--hover: $green3,
+    background-color--warning--hover: $orange3,
+    background-color--danger--hover: $red3,
+    border-color--default: $dark-gray4,
+    border-color--primary: $blue4,
+    border-color--success: $green4,
+    border-color--warning: $orange4,
+    border-color--danger: $red4,
+    box-shadow: 0 8px 24px rgb(0, 0, 0, .4),
+  ),
+);
+
+#toast {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 12;
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+.toast {
+  display: inline-flex;
+  position: fixed;
+  z-index: 13;
+  pointer-events: all;
+  transition: 0.2s;
+}
+
+.toast-body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  top: inherit;
+  bottom: inherit;
+  left: inherit;
+  right: inherit;
+  max-width: 600px;
+  margin: 20px;
+  padding: 0px 8px;
+  border: 1px solid;
+  border-radius: $border-radius--regular;
+  pointer-events: all;
+  transition: 0.2s;
+
+  @include themify($themes) {
+    background-color: themed('background-color--default');
+    border-color: themed('border-color--default');
+    box-shadow: themed('box-shadow');
+  }
+}
+
+.toast-icon {
+  display: inline-flex;
+  padding: 6px;
+  margin: 7px 0;
+
+  svg > path {
+    @include themify($themes) {
+      fill: rgba(themed('text-color--default'), 0.5);
+    }
+  }
+}
+
+.toast-text {
+  display: inline-flex;
+  font-family: $font-family;
+  font-size: $font-size--regular;
+  font-weight: 500;
+  font-style: normal;
+  text-align: left;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  padding: 6px;
+  margin: 6px 12px 6px 0;
+
+  @include themify($themes) {
+    color: themed('text-color--default');
+  }
+}
+
+.toast-button {
+  display: inline-flex;
+  font-family: $font-family;
+  font-size: $font-size--regular;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  margin: 6px 0;
+  transition: $default-transition;
+  cursor: pointer;
+
+  @include themify($themes) {
+    color: themed('text-color--default');
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background: themed('background-color--default--hover');
+    }
+  }
+}
+
+.toast-close {
+  display: inline-flex;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  appearance: none;
+  padding: 6px;
+  margin: 8px 0;
+  transition: $default-transition;
+  cursor: pointer;
+
+  &:hover {
+    @include themify($themes) {
+      background: themed('background-color--default--hover');
+    }
+  }
+
+  svg > path {
+    @include themify($themes) {
+      fill: rgba(themed('text-color--default'), 0.5);
+    }
+  }
+}
+
+@each $intent in $intents {
+  .toast-body--#{$intent} {
+    @include themify($themes) {
+      background-color: themed('background-color--#{$intent}');
+      border-color: themed('border-color--#{$intent}');
+    }
+
+    .toast-icon {
+      svg > path {
+        @include themify($themes) {
+          fill: rgba(themed('text-color--#{$intent}'), 0.5);
+        }
+      }
+    }
+
+    .toast-text {
+      @include themify($themes) {
+        color: themed('text-color--#{$intent}');
+      }
+    }
+
+    .toast-button,
+    .toast-close {
+      @include themify($themes) {
+        color: themed('text-color--#{$intent}');
+      }
+
+      &:hover {
+        @include themify($themes) {
+          background: themed('background-color--#{$intent}--hover');
+        }
+      }
+
+      svg > path {
+        @include themify($themes) {
+          fill: rgba(themed('text-color--#{$intent}'), 0.5);
+        }
+      }
+    }
+  }
+}
+
+.toast--small {
+  .toast-body {
+    padding: 0px 7px;
+
+    .toast-icon {
+      margin: 6px 0;
+    }
+
+    .toast-text {
+      margin: 4px 10px 4px 0;
+    }
+
+    .toast-button {
+      padding: 5px 8px;
+      margin: 5px 0;
+    }
+    .toast-close {
+      margin: 6px 0;
+    }
+  }
+}
+
+.toast--large {
+  .toast-body {
+    margin: 25px;
+    padding: 0px 7px 0px 8px;
+    border-radius: $border-radius--large;
+
+    .toast-icon {
+      margin: 8px 0;
+    }
+
+    .toast-text {
+      font-size: $font-size--large;
+    }
+
+    .toast-button {
+      border-radius: 8px;
+      font-size: $font-size--large;
+    }
+
+    .toast-close {
+      padding: 8px;
+      margin: 6px 0;
+      border-radius: 8px;
+      font-size: $font-size--large;
+    }
+  }
+}

@@ -1,0 +1,179 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    box-shadow: $box-shadow-light,
+    text-color: $black,
+    background-color: $light-gray3,
+    background-color--hover: $light-gray2,
+    background-color--active: $light-gray1,
+    border-color: $light-gray1,
+    background-color--checked: $blue3,
+    background-color--checked--hover: $blue2,
+    background-color--checked--active: $blue1,
+    border-color--checked: $blue1,
+  ),
+  dark: (
+    box-shadow: $box-shadow-light,
+    text-color: $white,
+    background-color: $dark-gray2,
+    background-color--hover: $dark-gray3,
+    background-color--active: $dark-gray4,
+    border-color: $dark-gray4,
+    background-color--checked: $blue2,
+    background-color--checked--hover: $blue3,
+    background-color--checked--active: $blue4,
+    border-color--checked: $blue4,
+  ),
+);
+
+.checkbox-container {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  min-height: 20px;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  transition: $default-transition;
+
+  &:checked + .checkbox-overlay {
+    @include themify($themes) {
+      background-color: themed('background-color--checked');
+      border-color: themed('border-color--checked');
+    }
+  }
+
+  &:checked + .checkbox-overlay:hover {
+    @include themify($themes) {
+      background-color: themed('background-color--checked--hover');
+    }
+  }
+
+  &:checked + .checkbox-overlay:active {
+    @include themify($themes) {
+      background-color: themed('background-color--checked--active');
+    }
+  }
+
+  &:checked + .checkbox-overlay:after {
+    display: block;
+  }
+
+  &:disabled + .checkbox-overlay {
+    cursor: not-allowed;
+
+    @include themify($themes) {
+      background-color: themed('background-color--active');
+    }
+  }
+
+  &:checked {
+    &:disabled + .checkbox-overlay {
+      @include themify($themes) {
+        background-color: themed('background-color--checked--active');
+        border-color: themed('background-color--checked--active');
+      }
+    }
+
+    &:disabled + .checkbox-overlay:after {
+      @include themify($themes) {
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
+
+.checkbox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border: 1px solid;
+  border-radius: 4px;
+  transition: $default-transition;
+
+  @include themify($themes) {
+    background-color: themed('background-color');
+    border-color: themed('border-color');
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background-color: themed('background-color--hover');
+    }
+  }
+
+  &:active {
+    @include themify($themes) {
+      background-color: themed('background-color--active');
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 3px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: $default-transition;
+  }
+}
+
+.checkbox-size--large {
+  min-height: 24px;
+  padding-left: 24px;
+
+  .checkbox-overlay {
+    height: 22px;
+    width: 22px;
+    border-radius: 6px;
+
+    &:after {
+      left: 7px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
+      border-width: 0 3px 3px 0;
+    }
+  }
+}
+
+.checkbox-label {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  appearance: none;
+  font-family: $font-family;
+  font-size: $font-size--regular;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0 0 0 12px;
+  transition: $default-transition;
+
+  @include themify($themes) {
+    color: themed('text-color');
+  }
+}

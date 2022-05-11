@@ -1,0 +1,40 @@
+@import '../common/themes';
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  button {
+    margin-right: -1px;
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: $border-radius--regular;
+      border-bottom-left-radius: $border-radius--regular;
+      margin-right: -1px;
+    }
+
+    &:last-child {
+      border-top-right-radius: $border-radius--regular;
+      border-bottom-right-radius: $border-radius--regular;
+      margin-right: 0px;
+    }
+  }
+}
+
+.button-group--large {
+  button {
+    &:first-child {
+      border-top-left-radius: $border-radius--large;
+      border-bottom-left-radius: $border-radius--large;
+      margin-right: -1px;
+    }
+
+    &:last-child {
+      border-top-right-radius: $border-radius--large;
+      border-bottom-right-radius: $border-radius--large;
+      margin-right: 0px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    background-color: $dark-gray2,
+    border-color: $dark-gray2,
+    text-color: $white,
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.1),
+  ),
+  dark: (
+    background-color: $light-gray4,
+    border-color: $light-gray4,
+    text-color: $black,
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.4),
+  ),
+);
+
+.tooltip {
+  &[data-popper-placement^='top'] {
+    #arrow {
+      &::before {
+        @include themify($themes) {
+          border-color: themed('border-color');
+        }
+      }
+    }
+  }
+
+  &[data-popper-placement^='bottom'] {
+    #arrow {
+      &::before {
+        @include themify($themes) {
+          border-color: themed('border-color');
+        }
+      }
+    }
+  }
+
+  &[data-popper-placement^='left'] {
+    #arrow {
+      &::before {
+        @include themify($themes) {
+          border-color: themed('border-color');
+        }
+      }
+    }
+  }
+
+  &[data-popper-placement^='right'] {
+    #arrow {
+      &::before {
+        @include themify($themes) {
+          border-color: themed('border-color');
+        }
+      }
+    }
+  }
+
+  #popover-children {
+    padding: 8px 12px;
+    border-radius: $border-radius--small;
+
+    @include themify($themes) {
+      background-color: themed('background-color');
+      border-color: themed('border-color');
+      box-shadow: themed('box-shadow');
+      color: themed('text-color');
+    }
+  }
+}

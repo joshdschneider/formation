@@ -1,0 +1,41 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    background-color: $white,
+    border-color: $light-gray1,
+    box-shadow: none,
+    box-shadow--interactive: 0 8px 24px rgb(0, 0, 0, 0.1),
+  ),
+  dark: (
+    background-color: $black,
+    border-color: $dark-gray4,
+    box-shadow: none,
+    box-shadow--interactive: 0 8px 24px rgb(0, 0, 0, 0.4),
+  ),
+);
+
+.card {
+  display: block;
+  text-align: left;
+  border: 1px solid;
+  border-radius: $border-radius--large;
+  width: 100%;
+  margin: 20px;
+  padding: 20px;
+  transition: $default-transition;
+
+  @include themify($themes) {
+    background-color: themed('background-color');
+    border-color: themed('border-color');
+    box-shadow: themed('box-shadow');
+  }
+}
+
+.card--interactive {
+  &:hover {
+    @include themify($themes) {
+      box-shadow: themed('box-shadow--interactive');
+    }
+  }
+}

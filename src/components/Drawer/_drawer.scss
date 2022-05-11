@@ -1,0 +1,130 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    background-color: $light-gray5,
+    border-color: $light-gray2,
+    text-color: $black,
+    text-color--header: $black,
+    background-color--header: $white,
+    background-color--header--hover: $light-gray4,
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.2),
+  ),
+  dark: (
+    background-color: $dark-gray1,
+    border-color: $dark-gray3,
+    text-color: $white,
+    text-color--header: $white,
+    background-color--header: $dark-gray2,
+    background-color--header--hover: $dark-gray3,
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.4),
+  ),
+);
+
+#drawer {
+  display: none;
+  position: fixed;
+  padding: 0px;
+  border: none;
+  border-radius: 0;
+  pointer-events: all;
+  transition: 0.3s;
+
+  @include themify($themes) {
+    background-color: themed('background-color');
+    border-color: themed('border-color');
+    box-shadow: themed('box-shadow');
+  }
+
+  &[data-show] {
+    display: block;
+  }
+}
+
+.drawer--top,
+.drawer--bottom {
+  left: 0;
+  right: 0;
+}
+
+.drawer--left,
+.drawer--right {
+  top: 0;
+  bottom: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid;
+
+  @include themify($themes) {
+    background-color: themed('background-color--header');
+    border-color: themed('border-color');
+  }
+
+  .header-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: $font-family;
+    font-size: $font-size--large;
+    font-weight: 600;
+    font-style: normal;
+    text-align: left;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+
+    @include themify($themes) {
+      color: themed('text-color--header');
+    }
+
+    .icon {
+      padding-right: 14px;
+    }
+  }
+
+  .header-close {
+    display: inline-flex;
+    white-space: nowrap;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    appearance: none;
+    padding: 6px;
+    margin: -6px;
+    transition: $default-transition;
+    cursor: pointer;
+
+    &:hover {
+      @include themify($themes) {
+        background: themed('background-color--header--hover');
+      }
+    }
+
+    svg > path {
+      @include themify($themes) {
+        fill: themed('text-color--header');
+      }
+    }
+  }
+}
+
+.drawer-children {
+  display: block;
+  font-family: $font-family;
+  font-size: $font-size--regular;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  padding: 15px;
+
+  @include themify($themes) {
+    color: themed('text-color');
+  }
+}

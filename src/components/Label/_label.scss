@@ -1,0 +1,45 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    text-color: $black,
+  ),
+  dark: (
+    text-color: $white,
+  ),
+);
+
+.label {
+  display: block;
+  font-family: $font-family;
+  font-size: $font-size--regular;
+  font-weight: 500;
+  font-style: normal;
+  text-align: left;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  white-space: nowrap;
+  padding-bottom: 10px;
+
+  @include themify($themes) {
+    color: themed('text-color');
+  }
+}
+
+.label--inline {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+  padding-bottom: 0px;
+  padding-right: 10px;
+}
+
+.label--small {
+  font-size: $font-size--small;
+}
+
+.label--large {
+  font-size: $font-size--large;
+}

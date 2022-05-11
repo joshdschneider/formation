@@ -1,0 +1,46 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    icon-fill--default: $black,
+    icon-fill--primary: $blue3,
+    icon-fill--success: $green3,
+    icon-fill--warning: $orange3,
+    icon-fill--danger: $red3,
+  ),
+  dark: (
+    icon-fill--default: $white,
+    icon-fill--primary: $blue4,
+    icon-fill--success: $green4,
+    icon-fill--warning: $orange4,
+    icon-fill--danger: $red4,
+  ),
+);
+
+.icon {
+  transition: $default-transition;
+
+  @include themify($themes) {
+    fill: themed('icon-fill--default');
+  }
+}
+
+@each $intent in $intents {
+  .icon-intent--#{$intent} {
+    @include themify($themes) {
+      fill: themed('icon-fill--#{$intent}');
+    }
+  }
+}
+
+.icon,
+.icon-size--regular,
+.icon-size--small {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-size--large {
+  width: 18px;
+  height: 18px;
+}

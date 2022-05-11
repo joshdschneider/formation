@@ -4,7 +4,7 @@ import './_spinner.scss';
 
 class Spinner extends AbstractSpinner {
   render() {
-    return <div style={this.fetchStyles()} id={this.props.id} className={this.fetchClasses()} />;
+    return <div style={this.getStyles()} id={this.props.id} className={this.getClasses()} />;
   }
 }
 

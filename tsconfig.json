@@ -12,6 +12,7 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "emitDeclarationOnly": true
   }
 }

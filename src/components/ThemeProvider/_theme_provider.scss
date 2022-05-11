@@ -1,0 +1,98 @@
+@import '../common/themes';
+
+.theme {
+  transition: $default-transition;
+}
+
+.theme-light {
+  background: #ffffff;
+  color: $black;
+}
+
+.theme-dark {
+  background: #111418;
+  color: $white;
+}
+
+$themes: (
+  light: (
+    link-color: $blue2,
+  ),
+  dark: (
+    link-color: $blue4,
+  ),
+);
+
+body {
+  font-family: $font-family;
+  font-size: $font-size--regular;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  transition: $default-transition;
+}
+
+p,
+span {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+
+  @include themify($themes) {
+    color: themed('link-color');
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h5,
+h4,
+h3,
+h2,
+h1 {
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+h5,
+h4,
+h3 {
+  font-weight: 700;
+}
+
+h2,
+h1 {
+  font-weight: 800;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h1 {
+  font-size: 28px;
+}

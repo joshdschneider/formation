@@ -23,7 +23,7 @@ type ButtonProps = {
 };
 
 abstract class AbstractButton extends React.Component<ButtonProps> {
-  fetchDisabled(): boolean {
+  getDisabled(): boolean {
     if (!!this.props.loading) {
       return true;
     }
@@ -35,7 +35,7 @@ abstract class AbstractButton extends React.Component<ButtonProps> {
     return false;
   }
 
-  fetchClasses(): string {
+  getClasses(): string {
     let classList = `button`;
 
     if (!!this.props.size && this.props.size !== 'regular') {
@@ -57,7 +57,7 @@ abstract class AbstractButton extends React.Component<ButtonProps> {
     return classList;
   }
 
-  renderChildren(): ReactNode {
+  getChildren(): ReactNode {
     let children = (
       <>
         {this.props.leftIcon ? (

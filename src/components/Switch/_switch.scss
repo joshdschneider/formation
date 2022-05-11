@@ -1,0 +1,201 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    box-shadow: $box-shadow-light,
+    text-color: $black,
+    background-color: $light-gray2,
+    background-color--hover: $light-gray1,
+    background-color--active: $gray5,
+    border-color: $gray1,
+    background-color--checked: $blue3,
+    background-color--checked--hover: $blue2,
+    background-color--checked--active: $blue1,
+    border-color--checked: $blue1,
+  ),
+  dark: (
+    box-shadow: $box-shadow-light,
+    text-color: $white,
+    background-color: $dark-gray3,
+    background-color--hover: $dark-gray4,
+    background-color--active: $dark-gray5,
+    border-color: $dark-gray1,
+    background-color--checked: $blue2,
+    background-color--checked--hover: $blue3,
+    background-color--checked--active: $blue4,
+    border-color--checked: $blue1,
+  ),
+);
+
+.switch-container {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding-left: 38px;
+  cursor: pointer;
+  min-height: 20px;
+}
+
+.switch {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  transition: $delayed-transition;
+
+  &:checked + .switch-overlay {
+    @include themify($themes) {
+      background-color: themed('background-color--checked');
+    }
+  }
+
+  &:checked + .switch-overlay:hover {
+    @include themify($themes) {
+      background-color: themed('background-color--checked--hover');
+    }
+  }
+
+  &:checked + .switch-overlay:active {
+    @include themify($themes) {
+      background-color: themed('background-color--checked--active');
+    }
+  }
+
+  &:checked + .switch-overlay:after {
+    left: 19px;
+
+    @include themify($themes) {
+      border-color: themed('border-color--checked');
+    }
+  }
+
+  &:disabled + .switch-overlay {
+    cursor: not-allowed;
+
+    @include themify($themes) {
+      background-color: themed('background-color--active');
+    }
+
+    &:hover,
+    &:active {
+      @include themify($themes) {
+        background-color: themed('background-color--active');
+      }
+    }
+
+    &:after {
+      @include themify($themes) {
+        background-color: rgba($white, 0.5);
+        border-color: themed('background-color--active');
+      }
+    }
+  }
+
+  &:checked {
+    &:disabled + .switch-overlay {
+      @include themify($themes) {
+        background-color: themed('background-color--checked--active');
+      }
+
+      &:hover,
+      &:active {
+        @include themify($themes) {
+          background-color: themed('background-color--checked--active');
+        }
+      }
+
+      &:after {
+        @include themify($themes) {
+          background-color: rgba($white, 0.5);
+          border-color: themed('background-color--checked--active');
+        }
+      }
+    }
+  }
+}
+
+.switch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 38px;
+  border-radius: 25px;
+  transition: $delayed-transition;
+
+  @include themify($themes) {
+    background-color: themed('background-color');
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background-color: themed('background-color--hover');
+    }
+  }
+
+  &:active {
+    @include themify($themes) {
+      background-color: themed('background-color--active');
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 1px;
+    top: 1px;
+    height: 16px;
+    width: 16px;
+    border: 1px solid;
+    border-radius: 50%;
+    transition: $delayed-transition;
+
+    @include themify($themes) {
+      background-color: $white;
+      border-color: themed('border-color');
+    }
+  }
+}
+
+.switch-size--large {
+  min-height: 24px;
+  padding-left: 42px;
+
+  .switch-overlay {
+    height: 24px;
+    width: 42px;
+
+    &:after {
+      left: 1px;
+      top: 1px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+.switch-label {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  appearance: none;
+  font-family: $font-family;
+  font-size: $font-size--regular;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0 0 0 12px;
+  transition: $default-transition;
+
+  @include themify($themes) {
+    color: themed('text-color');
+  }
+}

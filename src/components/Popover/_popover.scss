@@ -1,0 +1,128 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    background-color: $light-gray5,
+    border-color: $light-gray1,
+    text-color: $black,
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.1),
+  ),
+  dark: (
+    background-color: $dark-gray1,
+    border-color: $dark-gray2,
+    text-color: $white,
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.4),
+  ),
+);
+
+.popover {
+  display: none;
+  z-index: 11;
+
+  &[data-show] {
+    display: block;
+  }
+
+  &[data-popper-placement^='top'] {
+    #arrow {
+      bottom: -4px;
+
+      &::before{
+        @include themify($themes) {
+          border-bottom: 1px solid;
+          border-right: 1px solid;
+          border-color: themed('border-color');
+        }
+      }
+    }
+  } 
+
+  &[data-popper-placement^='bottom'] {
+    #arrow {
+      top: -5px;
+
+      &::before{
+        @include themify($themes) {
+          border-top: 1px solid;
+          border-left: 1px solid;
+          border-color: themed('border-color');
+        }
+      }
+    }
+  } 
+
+  &[data-popper-placement^='left'] {
+    #arrow {
+      right: -4px;
+
+      &::before{
+        @include themify($themes) {
+          border-top: 1px solid;
+          border-right: 1px solid;
+          border-color: themed('border-color');
+        }
+      }
+    }
+  }
+
+  &[data-popper-placement^='right'] {
+    #arrow {
+      left: -5px;
+
+      &::before{
+        @include themify($themes) {
+          border-bottom: 1px solid;
+          border-left: 1px solid;
+          border-color: themed('border-color');
+        }
+      }
+    }
+  }
+}
+
+#arrow,
+#arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+
+#arrow {
+  visibility: hidden;
+
+  &::before {
+    visibility: visible;
+    content: '';
+    transform: rotate(45deg);
+  }
+}
+
+#popover-children {
+  display: block;
+  font-family: $font-family;
+  font-size: $font-size--regular;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  padding: 12px 15px;
+  border: 1px solid;
+  border-radius: $border-radius--regular;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: .2s;
+
+  @include themify($themes) {
+    background-color: themed('background-color');
+    border-color: themed('border-color');
+    box-shadow: themed('box-shadow');
+    color: themed('text-color');
+  }
+
+  &[data-show] {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

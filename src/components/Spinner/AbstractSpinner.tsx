@@ -36,7 +36,7 @@ abstract class AbstractSpinner extends React.Component<SpinnerProps> {
     }
   }
 
-  fetchStyles(): object {
+  getStyles(): object {
     return {
       width: this.getSize(),
       height: this.getSize(),
@@ -45,7 +45,7 @@ abstract class AbstractSpinner extends React.Component<SpinnerProps> {
     };
   }
 
-  fetchClasses(): string {
+  getClasses(): string {
     let classList = `spinner`;
 
     if (!!this.props.intent) {

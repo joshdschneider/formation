@@ -10,13 +10,13 @@ class Button extends AbstractButton {
         name={this.props.name}
         value={this.props.value}
         id={this.props.id}
-        className={this.fetchClasses()}
+        className={this.getClasses()}
         style={this.props.style}
         onClick={this.props.onClick}
         ref={this.props.ref}
-        disabled={this.fetchDisabled()}
+        disabled={this.getDisabled()}
       >
-        {this.renderChildren()}
+        {this.getChildren()}
       </button>
     );
   }

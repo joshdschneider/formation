@@ -1,0 +1,86 @@
+@import '../common/themes';
+
+$themes: (
+  light: (
+    background-color--default: $light-gray4,
+    background-color--primary: rgba($blue3, 0.12),
+    background-color--success: rgba($green3, 0.12),
+    background-color--warning: rgba($orange3, 0.12),
+    background-color--danger: rgba($red3, 0.12),
+    title-color--default: $dark-gray2,
+    title-color--primary: $blue2,
+    title-color--success: $green2,
+    title-color--warning: $orange2,
+    title-color--danger: $red2,
+  ),
+  dark: (
+    background-color--default: $dark-gray2,
+    background-color--primary: rgba($blue2, 0.2),
+    background-color--success: rgba($green2, 0.2),
+    background-color--warning: rgba($orange2, 0.2),
+    background-color--danger: rgba($red2, 0.2),
+    title-color--default: $light-gray4,
+    title-color--primary: $blue4,
+    title-color--success: $green4,
+    title-color--warning: $orange4,
+    title-color--danger: $red4,
+  ),
+);
+
+.callout {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: none;
+  border-radius: $border-radius--large;
+  width: 100%;
+  margin: 20px;
+  transition: $default-transition;
+
+  @include themify($themes) {
+    background: themed('background-color--default');
+  }
+
+  .callout-icon {
+    display: inline-flex;
+    padding: 20px 0px 20px 20px;
+    margin-right: -3px;
+  }
+
+  .callout-body {
+    display: block;
+    text-align: left;
+
+    .callout-title {
+      display: block;
+      padding: 20px 20px 0px 20px;
+      margin-bottom: -10px;
+      margin-top: -5px;
+    }
+
+    .callout-children {
+      display: block;
+      padding: 20px;
+    }
+  }
+}
+
+@each $intent in $intents {
+  .callout--#{$intent} {
+    @include themify($themes) {
+      background: themed('background-color--#{$intent}');
+    }
+
+    .callout-icon > svg {
+      @include themify($themes) {
+        fill: themed('title-color--#{$intent}');
+      }
+    }
+
+    .callout-title {
+      @include themify($themes) {
+        color: themed('title-color--#{$intent}');
+      }
+    }
+  }
+}
