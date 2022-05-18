@@ -20,5 +20,5 @@ export { default as Switch } from './Switch';
 export { default as TextArea } from './TextArea';
 export { default as ThemeProvider } from './ThemeProvider';
 export { default as Toast } from './Toast';
-export { toast as toast } from './Toast';
+export { toast } from './Toast';
 export { default as Tooltip } from './Tooltip';
