@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextAreaProps } from './types';
 
-abstract class AbstractTextArea extends React.Component<TextAreaProps> {
+export abstract class AbstractTextArea extends React.Component<TextAreaProps> {
   getClasses(): string {
     let classList = `textarea`;
 
@@ -20,5 +20,3 @@ abstract class AbstractTextArea extends React.Component<TextAreaProps> {
     return classList;
   }
 }
-
-export default AbstractTextArea;
