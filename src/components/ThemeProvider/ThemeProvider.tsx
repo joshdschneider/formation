@@ -1,10 +1,6 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { ThemeProps } from './types';
 import './_theme_provider.scss';
-
-type ThemeProps = {
-  theme: 'light' | 'dark';
-  children: ReactNode;
-};
 
 class ThemeProvider extends React.Component<ThemeProps> {
   componentDidMount(): void {

@@ -1,35 +1,12 @@
-import React, { MouseEventHandler, ReactNode, RefObject } from 'react';
-import { Intent, Position, Size } from '../common/types';
+import React from 'react';
 import { EventEmitter } from 'events';
 import { generateId } from '../common/utils';
+import { ToastEvent, ToastProps } from './types';
 import './_toast.scss';
-
-type ToastProps = {
-  id?: string;
-  className?: string;
-  position?: Position;
-  size?: Size;
-  timeout?: number;
-  ref?: RefObject<HTMLDivElement>;
-  children?: ReactNode;
-};
 
 type ToastState = {
   toasts: Array<ToastEvent>;
   queue: Array<ToastEvent>;
-};
-
-export type ToastEvent = {
-  id?: string;
-  intent?: Intent;
-  text?: string;
-  icon?: string;
-  button?: ToastButton;
-};
-
-type ToastButton = {
-  text?: string;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 export const toastEmitter: EventEmitter = new EventEmitter();

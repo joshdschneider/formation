@@ -1,13 +1,5 @@
-import React, { CSSProperties } from 'react';
-import { Intent, Size } from '../common/types';
-
-type SpinnerProps = {
-  size?: Size;
-  intent?: Intent;
-  id?: string;
-  style?: CSSProperties;
-  className?: string;
-};
+import React from 'react';
+import { SpinnerProps } from './types';
 
 abstract class AbstractSpinner extends React.Component<SpinnerProps> {
   getSize(): number {

@@ -1,19 +1,5 @@
-import React, { ChangeEventHandler, ReactNode, RefObject } from 'react';
-import { Size } from '../common/types';
-
-type SwitchProps = {
-  id?: string;
-  name?: string;
-  checked?: boolean;
-  label?: string;
-  disabled?: boolean;
-  required?: boolean;
-  size?: Size;
-  className?: string;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  ref?: RefObject<HTMLInputElement>;
-  children?: ReactNode;
-};
+import React, { ReactNode } from 'react';
+import { SwitchProps } from './types';
 
 abstract class AbstractSwitch extends React.Component<SwitchProps> {
   getClasses(): string {

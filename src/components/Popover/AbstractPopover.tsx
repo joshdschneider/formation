@@ -1,17 +1,7 @@
-import React, { CSSProperties, ReactNode } from 'react';
+import React from 'react';
+import { PopoverProps } from './types';
 import { createPopper, Instance } from '@popperjs/core';
-import { Placement } from '../common/types';
 import { generateId } from '../common/utils';
-
-type PopoverProps = {
-  type?: 'popover' | 'tooltip';
-  action?: 'click' | 'hover';
-  selector: string;
-  placement?: Placement;
-  content?: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-};
 
 type PopoverState = {
   id: string;

@@ -1,26 +1,6 @@
 import React, { createRef, CSSProperties, ReactNode, RefObject } from 'react';
+import { DrawerProps, DrawerPosition } from './types';
 import Icon from '../Icon/Icon';
-
-type Position = 'top' | 'bottom' | 'left' | 'right';
-
-type ModalHeader = {
-  icon?: string;
-  text?: string;
-};
-
-type DrawerProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  position?: Position;
-  size?: string;
-  header?: ModalHeader;
-  className?: string;
-  style?: CSSProperties;
-  focus?: boolean;
-  closeOnEscapeKey?: boolean;
-  closeOnOuterClick?: boolean;
-  children?: ReactNode;
-};
 
 abstract class AbstractDrawer extends React.Component<DrawerProps> {
   drawer: RefObject<HTMLDivElement> = createRef();
@@ -133,7 +113,7 @@ abstract class AbstractDrawer extends React.Component<DrawerProps> {
   }
 }
 
-function slideIn(el: HTMLDivElement, pos: Position): void {
+function slideIn(el: HTMLDivElement, pos: DrawerPosition): void {
   switch (pos) {
     case 'top':
       el.style.top = `0px`;
@@ -152,7 +132,7 @@ function slideIn(el: HTMLDivElement, pos: Position): void {
   }
 }
 
-function slideOut(el: HTMLDivElement, pos: Position, size: string): void {
+function slideOut(el: HTMLDivElement, pos: DrawerPosition, size: string): void {
   let pad = '100px';
 
   switch (pos) {

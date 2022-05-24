@@ -1,25 +1,6 @@
-import React, { CSSProperties, MouseEventHandler, ReactNode, RefObject } from 'react';
-import { Size, Intent } from '../common/types';
+import React, { ReactNode } from 'react';
+import { ButtonProps } from './types';
 import Spinner from '../Spinner/Spinner';
-
-type ButtonProps = {
-  type?: 'button' | 'submit' | 'reset';
-  id?: string;
-  name?: string;
-  value?: string;
-  disabled?: boolean;
-  loading?: boolean;
-  minimal?: boolean;
-  size?: Size;
-  intent?: Intent;
-  className?: string;
-  style?: CSSProperties;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-  ref?: RefObject<HTMLButtonElement>;
-  leftIcon?: ReactNode;
-  rightIcon?: ReactNode;
-  children?: ReactNode;
-};
 
 abstract class AbstractButton extends React.Component<ButtonProps> {
   getDisabled(): boolean {

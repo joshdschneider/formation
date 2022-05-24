@@ -1,22 +1,6 @@
-import React, { createRef, CSSProperties, ReactNode, RefObject } from 'react';
+import React, { createRef, ReactNode, RefObject } from 'react';
 import Icon from '../Icon/Icon';
-
-type ModalProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  className?: string;
-  style?: CSSProperties;
-  header?: ModalHeader;
-  focus?: boolean;
-  closeOnEscapeKey?: boolean;
-  closeOnOuterClick?: boolean;
-  children?: ReactNode;
-};
-
-type ModalHeader = {
-  icon?: string;
-  text?: string;
-};
+import { ModalProps } from './types';
 
 abstract class AbstractModal extends React.Component<ModalProps> {
   modal: RefObject<HTMLDivElement> = createRef();

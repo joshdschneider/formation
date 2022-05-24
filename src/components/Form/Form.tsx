@@ -1,22 +1,6 @@
-import React, { CSSProperties, FormEventHandler, ReactNode, RefObject } from 'react';
+import React from 'react';
+import { FormProps } from './types';
 import './_form.scss';
-
-type FormProps = {
-  id?: string;
-  className?: string;
-  style?: CSSProperties;
-  acceptCharset?: string;
-  action?: string;
-  autoComplete?: string;
-  encType?: string;
-  method?: string;
-  name?: string;
-  noValidate?: boolean;
-  target?: string;
-  onSubmit?: FormEventHandler<HTMLFormElement>;
-  ref?: RefObject<HTMLFormElement>;
-  children?: ReactNode;
-};
 
 class Form extends React.Component<FormProps> {
   getClasses(): string {

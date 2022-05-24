@@ -1,15 +1,6 @@
-import React, { CSSProperties, ReactNode, RefObject } from 'react';
-import { Size } from '../common/types';
+import React from 'react';
+import { ButtonGroupProps } from './types';
 import './_button_group.scss';
-
-type ButtonGroupProps = {
-  id?: string;
-  className?: string;
-  style?: CSSProperties;
-  size?: Size;
-  ref?: RefObject<HTMLDivElement>;
-  children?: ReactNode;
-};
 
 class ButtonGroup extends React.Component<ButtonGroupProps> {
   getClasses(): string {

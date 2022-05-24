@@ -1,13 +1,5 @@
-import React, { createRef, ReactNode, RefObject } from 'react';
-
-type OverlayProps = {
-  isOpen: boolean;
-  focus?: boolean;
-  closeOnEscapeKey?: boolean;
-  closeOnOuterClick?: boolean;
-  onClose?: () => void;
-  children?: ReactNode;
-};
+import React, { createRef, RefObject } from 'react';
+import { OverlayProps } from './types';
 
 abstract class AbstractOverlay extends React.Component<OverlayProps> {
   overlay: RefObject<HTMLDivElement> = createRef();

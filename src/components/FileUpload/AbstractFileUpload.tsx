@@ -1,22 +1,5 @@
-import React, { ChangeEventHandler, CSSProperties, ReactNode, RefObject } from 'react';
-import { Intent, Size } from '../common/types';
-
-type FileUploadProps = {
-  id?: string;
-  name?: string;
-  value?: FileList;
-  disabled?: boolean;
-  accept?: string;
-  multiple?: boolean;
-  required?: boolean;
-  width?: string;
-  size?: Size;
-  intent?: Intent;
-  className?: string;
-  style?: CSSProperties;
-  onChage?: ChangeEventHandler<HTMLInputElement>;
-  ref?: RefObject<HTMLInputElement>;
-};
+import React, { CSSProperties, ReactNode } from 'react';
+import { FileUploadProps } from './types';
 
 abstract class AbstractFileUpload extends React.Component<FileUploadProps> {
   getClasses(): string {

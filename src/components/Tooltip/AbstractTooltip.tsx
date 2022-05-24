@@ -1,13 +1,5 @@
-import React, { CSSProperties, ReactNode } from 'react';
-import { Placement } from '../common/types';
-
-type TooltipProps = {
-  selector: string;
-  placement?: Placement;
-  content?: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-};
+import React from 'react';
+import { TooltipProps } from './types';
 
 abstract class AbstractTooltip extends React.Component<TooltipProps> {
   getClasses(): string {

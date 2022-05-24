@@ -1,13 +1,5 @@
-import React, { CSSProperties, ReactNode, RefObject } from 'react';
-
-type CardProps = {
-  interactive?: boolean;
-  id?: string;
-  className?: string;
-  style?: CSSProperties;
-  ref?: RefObject<HTMLDivElement>;
-  children?: ReactNode;
-};
+import React from 'react';
+import { CardProps } from './types';
 
 abstract class AbstractCard extends React.Component<CardProps> {
   getClasses(): string {

@@ -1,16 +1,6 @@
-import React, { CSSProperties } from 'react';
-import { Intent, Size } from '../common/types';
+import React from 'react';
+import { IconProps } from './types';
 import icons from './_icons.json';
-import './_icon.scss';
-
-type IconProps = {
-  icon: string;
-  size?: Size;
-  intent?: Intent;
-  id?: string;
-  style?: CSSProperties;
-  className?: string;
-};
 
 abstract class AbstractIcon extends React.Component<IconProps> {
   getPaths() {

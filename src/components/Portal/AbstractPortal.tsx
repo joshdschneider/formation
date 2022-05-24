@@ -1,8 +1,5 @@
-import React, { ReactNode } from 'react';
-
-type PortalProps = {
-  children?: ReactNode;
-};
+import React from 'react';
+import { PortalProps } from './types';
 
 abstract class AbstractPortal extends React.Component<PortalProps> {
   page = document.body;

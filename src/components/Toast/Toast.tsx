@@ -1,5 +1,6 @@
 import React from 'react';
-import AbstractToast, { toastEmitter, ToastEvent } from './AbstractToast';
+import AbstractToast, { toastEmitter } from './AbstractToast';
+import { ToastEvent } from './types';
 import AbstractToastBody from './AbstractToastBody';
 import { createRoot } from 'react-dom/client';
 import Portal from '../Portal/Portal';

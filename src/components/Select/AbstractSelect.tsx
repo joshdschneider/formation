@@ -1,32 +1,6 @@
-import React, { ChangeEventHandler, CSSProperties, ReactNode, RefObject } from 'react';
-import { Intent, Size } from '../common/types';
+import React, { ReactNode } from 'react';
+import { SelectProps } from './types';
 import Icon from '../Icon/Icon';
-
-type SelectProps = {
-  id?: string;
-  name?: string;
-  value?: string;
-  disabled?: boolean;
-  required?: boolean;
-  size?: Size;
-  minimal?: boolean;
-  intent?: Intent;
-  className?: string;
-  style?: CSSProperties;
-  onChange?: ChangeEventHandler<HTMLSelectElement>;
-  ref?: RefObject<HTMLSelectElement>;
-  options?: Array<OptionGroup | Option>;
-};
-
-type OptionGroup = {
-  label: string;
-  options: Array<Option>;
-};
-
-type Option = {
-  label: string;
-  value: string;
-};
 
 abstract class AbstractSelect extends React.Component<SelectProps> {
   getClasses(): string {

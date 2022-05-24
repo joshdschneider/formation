@@ -1,26 +1,9 @@
-import React, { MouseEventHandler, ReactNode } from 'react';
-import { Intent, Position, Size } from '../common/types';
+import React, { ReactNode } from 'react';
+import { Position } from '../common/types';
 import Icon from '../Icon/Icon';
+import { ToastBodyProps } from './types';
 
-type ToastBody = {
-  intent?: Intent;
-  text?: string;
-  icon?: string;
-  button?: ToastButton;
-  id: string;
-  position: Position;
-  size: Size;
-  timeout: number;
-  remove: (id: string) => void;
-  className?: string;
-};
-
-type ToastButton = {
-  text?: string;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-};
-
-abstract class AbstractToastBody extends React.Component<ToastBody> {
+abstract class AbstractToastBody extends React.Component<ToastBodyProps> {
   componentDidMount(): void {
     if (!!this.props.id) {
       let el = document.getElementById(this.props.id);

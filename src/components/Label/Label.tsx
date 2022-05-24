@@ -1,15 +1,6 @@
-import React, { ReactNode } from 'react';
-import { Size } from '../common/types';
+import React from 'react';
+import { LabelProps } from './types';
 import './_label.scss';
-
-type LabelProps = {
-  id?: string;
-  for?: string;
-  inline?: boolean;
-  className?: string;
-  size?: Size;
-  children?: ReactNode;
-};
 
 class Label extends React.Component<LabelProps> {
   getClasses(): string {

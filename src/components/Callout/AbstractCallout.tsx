@@ -1,19 +1,8 @@
-import React, { CSSProperties, ReactNode, RefObject } from 'react';
-import { Intent } from '../common/types';
+import React, { ReactNode } from 'react';
+import { CalloutProps } from './types';
 import Icon from '../Icon/Icon';
 
-type CardProps = {
-  intent?: Intent;
-  title?: string;
-  icon?: string;
-  id?: string;
-  className?: string;
-  style?: CSSProperties;
-  ref?: RefObject<HTMLDivElement>;
-  children?: ReactNode;
-};
-
-abstract class AbstractCallout extends React.Component<CardProps> {
+abstract class AbstractCallout extends React.Component<CalloutProps> {
   getClasses(): string {
     let classList = 'callout';
 
