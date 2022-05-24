@@ -1,6 +1,5 @@
 import React from 'react';
 import { AbstractIcon } from './AbstractIcon';
-import './_icon.scss';
 
 export class Icon extends AbstractIcon {
   render() {

@@ -7,7 +7,7 @@ export { Size, Intent, Position, Placement } from './common/types';
 export { Drawer, DrawerProps, DrawerHeader, DrawerPosition } from './Drawer';
 export { FileUpload, FileUploadProps } from './FileUpload';
 export { Form, FormProps } from './Form';
-export { Icon, IconProps } from './Icon';
+export { Icon, IconProps, Icons } from './Icon';
 export { Input, InputProps } from './Input';
 export { Label, LabelProps } from './Label';
 export { Modal, ModalProps, ModalHeader } from './Modal';

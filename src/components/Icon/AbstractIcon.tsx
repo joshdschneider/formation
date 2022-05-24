@@ -1,10 +1,10 @@
 import React from 'react';
 import { IconProps } from './types';
-import icons from './_icons.json';
+import { Icons } from './Icons';
 
 export abstract class AbstractIcon extends React.Component<IconProps> {
   getPaths() {
-    let i = icons.find((i) => i.iconName === this.props.icon);
+    let i = Icons.find((i) => i.iconName === this.props.icon);
 
     if (!!i && !!i.paths) {
       return (
