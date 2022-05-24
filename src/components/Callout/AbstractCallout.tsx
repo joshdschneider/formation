@@ -6,7 +6,6 @@ type CardProps = {
   intent?: Intent;
   title?: string;
   icon?: string;
-  showTitle?: boolean;
   id?: string;
   className?: string;
   style?: CSSProperties;

@@ -23,7 +23,7 @@ $themes: (
 
 #modal {
   display: none;
-  width: 100%;
+  width: calc(100% - 40px);
   max-width: 500px;
   margin: 20px;
   padding: 0px;

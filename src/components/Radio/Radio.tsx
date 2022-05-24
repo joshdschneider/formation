@@ -5,7 +5,11 @@ import './_radio.scss';
 class Radio extends AbstractRadio {
   render() {
     return (
-      <label className={this.getClasses()} htmlFor={this.props.id || undefined}>
+      <label
+        className={this.getClasses()}
+        htmlFor={this.props.id || undefined}
+        style={this.props.style}
+      >
         <input
           type={'radio'}
           id={this.props.id}

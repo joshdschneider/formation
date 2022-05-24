@@ -61,6 +61,8 @@ $themes: (
 
 .button {
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   display: inline-flex;
   position: relative;
   justify-content: center;
@@ -123,6 +125,7 @@ $themes: (
     display: inherit;
     justify-content: inherit;
     align-items: inherit;
+    line-height: normal;
   }
 }
 

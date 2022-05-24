@@ -81,6 +81,7 @@ $themes: (
   .filename {
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: normal !important;
 
     @include themify($themes) {
       color: themed('text-color');
@@ -88,6 +89,8 @@ $themes: (
   }
 
   .placeholder {
+    line-height: normal !important;
+
     @include themify($themes) {
       color: themed('text-color--placeholder');
     }

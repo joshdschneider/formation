@@ -18,7 +18,7 @@ class Input extends AbstractInput {
           required={this.props.required}
           className={this.getClasses()}
           style={this.props.style}
-          onChange={this.props.onChage}
+          onChange={this.props.onChange}
           ref={this.props.ref}
         />
         {this.getIcons()}

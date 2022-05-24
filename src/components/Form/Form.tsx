@@ -1,9 +1,10 @@
-import React, { FormEventHandler, ReactNode, RefObject } from 'react';
+import React, { CSSProperties, FormEventHandler, ReactNode, RefObject } from 'react';
 import './_form.scss';
 
 type FormProps = {
   id?: string;
   className?: string;
+  style?: CSSProperties;
   acceptCharset?: string;
   action?: string;
   autoComplete?: string;
@@ -29,6 +30,7 @@ class Form extends React.Component<FormProps> {
       <form
         id={this.props.id}
         className={this.getClasses()}
+        style={this.props.style}
         acceptCharset={this.props.acceptCharset}
         action={this.props.action}
         autoComplete={this.props.autoComplete}

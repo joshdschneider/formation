@@ -10,7 +10,6 @@ type ButtonProps = {
   disabled?: boolean;
   loading?: boolean;
   minimal?: boolean;
-  active?: boolean;
   size?: Size;
   intent?: Intent;
   className?: string;

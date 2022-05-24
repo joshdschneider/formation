@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, ReactNode, RefObject } from 'react';
+import React, { ChangeEventHandler, CSSProperties, ReactNode, RefObject } from 'react';
 import { Size } from '../common/types';
 
 type CheckboxProps = {
@@ -10,6 +10,7 @@ type CheckboxProps = {
   required?: boolean;
   size?: Size;
   className?: string;
+  style?: CSSProperties;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   ref?: RefObject<HTMLInputElement>;
   children?: ReactNode;

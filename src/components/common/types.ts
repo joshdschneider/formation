@@ -2,14 +2,7 @@ export type Size = 'small' | 'regular' | 'large';
 
 export type Intent = 'default' | 'primary' | 'success' | 'warning' | 'danger';
 
-export type Position =
-  | 'center'
-  | 'top'
-  | 'top-left'
-  | 'top-right'
-  | 'bottom'
-  | 'bottom-left'
-  | 'bottom-right';
+export type Position = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';
 
 export type Placement =
   | 'top'

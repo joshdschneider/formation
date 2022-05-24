@@ -27,6 +27,8 @@ $themes: (
 
 .textarea {
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   display: inline-flex;
   position: relative;
   justify-content: center;
@@ -39,7 +41,7 @@ $themes: (
   letter-spacing: normal;
   word-spacing: normal;
   line-height: normal;
-  white-space: nowrap;
+  white-space: normal;
   border: 1px solid;
   border-radius: $border-radius--regular;
   width: inherit;

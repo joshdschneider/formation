@@ -18,7 +18,6 @@ class FileUpload extends AbstractFileUpload {
             id={this.props.id}
             name={this.props.name}
             disabled={this.props.disabled}
-            autoFocus={this.props.autofocus}
             accept={this.props.accept}
             multiple={this.props.multiple}
             required={this.props.required}
@@ -27,9 +26,14 @@ class FileUpload extends AbstractFileUpload {
             onChange={this.props.onChage}
             ref={this.props.ref}
           />
-          <span className={'file-input--inner'}>
+          <span className={'file-input--inner'} style={this.getWidth()}>
             {this.getFileName()}
-            <Button intent={this.props.intent} size={this.props.size} onClick={this.handleClick}>
+            <Button
+              intent={this.props.intent}
+              disabled={this.props.disabled}
+              size={this.props.size}
+              onClick={this.handleClick}
+            >
               Browse
             </Button>
           </span>

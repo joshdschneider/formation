@@ -70,6 +70,8 @@ $themes: (
 
 .select {
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   display: inline-flex;
   position: relative;
   justify-content: flex-start;

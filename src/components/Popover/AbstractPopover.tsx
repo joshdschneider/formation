@@ -66,6 +66,17 @@ abstract class AbstractPopover extends React.Component<PopoverProps, PopoverStat
 
   componentDidUpdate(): void {
     this.state.popper?.update();
+    if (!!this.props.placement) {
+      this.state.popper?.setOptions({
+        placement: this.props.placement,
+      });
+    }
+
+    let ref = document.querySelector(this.props.selector);
+    if (!!ref) {
+      this.removeEventListeners(ref);
+      this.addEventListeners(ref);
+    }
   }
 
   componentWillUnmount(): void {

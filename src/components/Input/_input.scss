@@ -36,6 +36,8 @@ $themes: (
 
 .input {
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   display: inline-flex;
   position: relative;
   justify-content: center;
@@ -80,6 +82,10 @@ $themes: (
     @include themify($themes) {
       color: themed('text-color--placeholder');
     }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 }
 

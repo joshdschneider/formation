@@ -15,7 +15,7 @@ type InputProps = {
   style?: CSSProperties;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
-  onChage?: ChangeEventHandler<HTMLInputElement>;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
   ref?: RefObject<HTMLInputElement>;
 };
 

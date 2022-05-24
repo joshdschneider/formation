@@ -1,10 +1,11 @@
-import React, { ReactNode, RefObject } from 'react';
+import React, { CSSProperties, ReactNode, RefObject } from 'react';
 import { Size } from '../common/types';
 import './_button_group.scss';
 
 type ButtonGroupProps = {
   id?: string;
   className?: string;
+  style?: CSSProperties;
   size?: Size;
   ref?: RefObject<HTMLDivElement>;
   children?: ReactNode;
@@ -27,7 +28,12 @@ class ButtonGroup extends React.Component<ButtonGroupProps> {
 
   render() {
     return (
-      <div id={this.props.id} className={this.getClasses()} ref={this.props.ref}>
+      <div
+        id={this.props.id}
+        className={this.getClasses()}
+        ref={this.props.ref}
+        style={this.props.style}
+      >
         {this.props.children}
       </div>
     );

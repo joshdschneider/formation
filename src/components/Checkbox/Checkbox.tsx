@@ -5,7 +5,7 @@ import './_checkbox.scss';
 class Checkbox extends AbstractCheckbox {
   render() {
     return (
-      <label className={this.getClasses()}>
+      <label className={this.getClasses()} style={this.props.style}>
         <input
           type={'checkbox'}
           id={this.props.id}
