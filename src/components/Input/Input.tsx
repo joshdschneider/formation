@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractInput from './AbstractInput';
+import { AbstractInput } from './AbstractInput';
 import './_input.scss';
 
-class Input extends AbstractInput {
+export class Input extends AbstractInput {
   render() {
     return (
       <div className={'input-container'}>
@@ -26,5 +26,3 @@ class Input extends AbstractInput {
     );
   }
 }
-
-export default Input;

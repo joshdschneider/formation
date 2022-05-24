@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractIcon from './AbstractIcon';
+import { AbstractIcon } from './AbstractIcon';
 import './_icon.scss';
 
-class Icon extends AbstractIcon {
+export class Icon extends AbstractIcon {
   render() {
     return (
       <svg
@@ -16,5 +16,3 @@ class Icon extends AbstractIcon {
     );
   }
 }
-
-export default Icon;

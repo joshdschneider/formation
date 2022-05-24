@@ -1,9 +1,9 @@
 import React from 'react';
-import Overlay from '../Overlay/Overlay';
-import AbstractDrawer from './AbstractDrawer';
+import { AbstractDrawer } from './AbstractDrawer';
+import { Overlay } from '../Overlay/Overlay';
 import './_drawer.scss';
 
-class Drawer extends AbstractDrawer {
+export class Drawer extends AbstractDrawer {
   render() {
     return (
       <Overlay
@@ -21,5 +21,3 @@ class Drawer extends AbstractDrawer {
     );
   }
 }
-
-export default Drawer;

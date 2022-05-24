@@ -1,9 +1,9 @@
 import React from 'react';
-import Popover from '../Popover/Popover';
-import AbstractTooltip from './AbstractTooltip';
+import { AbstractTooltip } from './AbstractTooltip';
+import { Popover } from '../Popover/Popover';
 import './_tooltip.scss';
 
-class Tooltip extends AbstractTooltip {
+export class Tooltip extends AbstractTooltip {
   render() {
     return (
       <Popover
@@ -18,5 +18,3 @@ class Tooltip extends AbstractTooltip {
     );
   }
 }
-
-export default Tooltip;

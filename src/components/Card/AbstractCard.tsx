@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardProps } from './types';
 
-abstract class AbstractCard extends React.Component<CardProps> {
+export abstract class AbstractCard extends React.Component<CardProps> {
   getClasses(): string {
     let classList = 'card';
 
@@ -16,5 +16,3 @@ abstract class AbstractCard extends React.Component<CardProps> {
     return classList;
   }
 }
-
-export default AbstractCard;

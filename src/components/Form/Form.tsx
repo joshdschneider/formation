@@ -2,7 +2,7 @@ import React from 'react';
 import { FormProps } from './types';
 import './_form.scss';
 
-class Form extends React.Component<FormProps> {
+export class Form extends React.Component<FormProps> {
   getClasses(): string {
     let classList = `form`;
     if (!!this.props.className) classList += ` ${this.props.className}`;
@@ -31,5 +31,3 @@ class Form extends React.Component<FormProps> {
     );
   }
 }
-
-export default Form;

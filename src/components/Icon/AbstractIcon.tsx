@@ -2,7 +2,7 @@ import React from 'react';
 import { IconProps } from './types';
 import icons from './_icons.json';
 
-abstract class AbstractIcon extends React.Component<IconProps> {
+export abstract class AbstractIcon extends React.Component<IconProps> {
   getPaths() {
     let i = icons.find((i) => i.iconName === this.props.icon);
 
@@ -41,5 +41,3 @@ abstract class AbstractIcon extends React.Component<IconProps> {
     return '0 0 16 16';
   }
 }
-
-export default AbstractIcon;

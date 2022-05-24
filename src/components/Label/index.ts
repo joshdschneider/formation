@@ -1,2 +1,2 @@
-export { default } from './Label';
+export { Label } from './Label';
 export { LabelProps } from './types';

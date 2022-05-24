@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProps } from './types';
 import './_theme_provider.scss';
 
-class ThemeProvider extends React.Component<ThemeProps> {
+export class ThemeProvider extends React.Component<ThemeProps> {
   componentDidMount(): void {
     document.body.classList.add(`theme`);
     document.body.classList.add(`theme-${this.props.theme}`);
@@ -25,5 +25,3 @@ class ThemeProvider extends React.Component<ThemeProps> {
     return this.props.children;
   }
 }
-
-export default ThemeProvider;

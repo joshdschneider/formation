@@ -1,7 +1,7 @@
 import React from 'react';
 import { SpinnerProps } from './types';
 
-abstract class AbstractSpinner extends React.Component<SpinnerProps> {
+export abstract class AbstractSpinner extends React.Component<SpinnerProps> {
   getSize(): number {
     switch (this.props.size) {
       case 'small':
@@ -53,5 +53,3 @@ abstract class AbstractSpinner extends React.Component<SpinnerProps> {
     return classList;
   }
 }
-
-export default AbstractSpinner;

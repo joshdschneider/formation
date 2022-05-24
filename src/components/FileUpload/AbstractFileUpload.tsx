@@ -1,7 +1,7 @@
 import React, { CSSProperties, ReactNode } from 'react';
 import { FileUploadProps } from './types';
 
-abstract class AbstractFileUpload extends React.Component<FileUploadProps> {
+export abstract class AbstractFileUpload extends React.Component<FileUploadProps> {
   getClasses(): string {
     let classList = `file-upload`;
 
@@ -35,5 +35,3 @@ abstract class AbstractFileUpload extends React.Component<FileUploadProps> {
     return {};
   }
 }
-
-export default AbstractFileUpload;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { PortalProps } from './types';
 
-abstract class AbstractPortal extends React.Component<PortalProps> {
+export abstract class AbstractPortal extends React.Component<PortalProps> {
   page = document.body;
   portalRoot = document.createElement('div');
 
@@ -14,5 +14,3 @@ abstract class AbstractPortal extends React.Component<PortalProps> {
     this.page.removeChild(this.portalRoot);
   }
 }
-
-export default AbstractPortal;

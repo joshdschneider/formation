@@ -1,9 +1,9 @@
 import React from 'react';
-import Portal from '../Portal/Portal';
-import AbstractOverlay from './AbstractOverlay';
+import { AbstractOverlay } from './AbstractOverlay';
+import { Portal } from '../Portal/Portal';
 import './_overlay.scss';
 
-class Overlay extends AbstractOverlay {
+export class Overlay extends AbstractOverlay {
   render() {
     return (
       <Portal>
@@ -16,5 +16,3 @@ class Overlay extends AbstractOverlay {
     );
   }
 }
-
-export default Overlay;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TooltipProps } from './types';
 
-abstract class AbstractTooltip extends React.Component<TooltipProps> {
+export abstract class AbstractTooltip extends React.Component<TooltipProps> {
   getClasses(): string {
     let classList = '';
 
@@ -12,5 +12,3 @@ abstract class AbstractTooltip extends React.Component<TooltipProps> {
     return classList;
   }
 }
-
-export default AbstractTooltip;

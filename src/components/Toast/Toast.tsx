@@ -1,12 +1,12 @@
 import React from 'react';
-import AbstractToast, { toastEmitter } from './AbstractToast';
+import { AbstractToast, toastEmitter } from './AbstractToast';
 import { ToastEvent } from './types';
-import AbstractToastBody from './AbstractToastBody';
+import { AbstractToastBody } from './AbstractToastBody';
 import { createRoot } from 'react-dom/client';
-import Portal from '../Portal/Portal';
+import { Portal } from '../Portal/Portal';
 import './_toast.scss';
 
-class Toast extends AbstractToast {
+export class Toast extends AbstractToast {
   render() {
     const { toasts } = this.state;
 
@@ -35,7 +35,7 @@ class Toast extends AbstractToast {
   }
 }
 
-class ToastBody extends AbstractToastBody {
+export class ToastBody extends AbstractToastBody {
   render() {
     return (
       <div id={this.props.id} className={this.getClasses()} style={{ visibility: 'hidden' }}>
@@ -48,7 +48,7 @@ class ToastBody extends AbstractToastBody {
   }
 }
 
-function createToastRoot(): void {
+export function createToastRoot(): void {
   const div = document.createElement('div');
   document.body.appendChild(div);
   const root = createRoot(div);
@@ -67,5 +67,3 @@ export function toast(event: ToastEvent): void {
     toastEmitter.emit('toast', event);
   }
 }
-
-export default Toast;

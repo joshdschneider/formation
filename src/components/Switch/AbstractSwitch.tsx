@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { SwitchProps } from './types';
 
-abstract class AbstractSwitch extends React.Component<SwitchProps> {
+export abstract class AbstractSwitch extends React.Component<SwitchProps> {
   getClasses(): string {
     let classList = `switch-container`;
 
@@ -24,5 +24,3 @@ abstract class AbstractSwitch extends React.Component<SwitchProps> {
     return this.props.children;
   }
 }
-
-export default AbstractSwitch;

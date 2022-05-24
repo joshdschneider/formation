@@ -1,9 +1,9 @@
 import React, { MouseEvent } from 'react';
-import Button from '../Button/Button';
-import AbstractFileUpload from './AbstractFileUpload';
+import { AbstractFileUpload } from './AbstractFileUpload';
+import { Button } from '../Button/Button';
 import './_file_upload.scss';
 
-class FileUpload extends AbstractFileUpload {
+export class FileUpload extends AbstractFileUpload {
   handleClick(e: MouseEvent): void {
     e.preventDefault();
     e.currentTarget.parentElement?.click();
@@ -42,5 +42,3 @@ class FileUpload extends AbstractFileUpload {
     );
   }
 }
-
-export default FileUpload;

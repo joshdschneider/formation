@@ -1,9 +1,9 @@
 import React from 'react';
-import Overlay from '../Overlay/Overlay';
-import AbstractModal from './AbstractModal';
+import { Overlay } from '../Overlay/Overlay';
+import { AbstractModal } from './AbstractModal';
 import './_modal.scss';
 
-class Modal extends AbstractModal {
+export class Modal extends AbstractModal {
   render() {
     return (
       <Overlay
@@ -21,5 +21,3 @@ class Modal extends AbstractModal {
     );
   }
 }
-
-export default Modal;

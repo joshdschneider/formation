@@ -1,8 +1,8 @@
 import React, { createRef, CSSProperties, ReactNode, RefObject } from 'react';
 import { DrawerProps, DrawerPosition } from './types';
-import Icon from '../Icon/Icon';
+import { Icon } from '../Icon/Icon';
 
-abstract class AbstractDrawer extends React.Component<DrawerProps> {
+export abstract class AbstractDrawer extends React.Component<DrawerProps> {
   drawer: RefObject<HTMLDivElement> = createRef();
 
   componentDidMount(): void {
@@ -152,5 +152,3 @@ function slideOut(el: HTMLDivElement, pos: DrawerPosition, size: string): void {
       break;
   }
 }
-
-export default AbstractDrawer;

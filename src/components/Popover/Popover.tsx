@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractPopover from './AbstractPopover';
+import { AbstractPopover } from './AbstractPopover';
 import './_popover.scss';
 
-class Popover extends AbstractPopover {
+export class Popover extends AbstractPopover {
   render() {
     return (
       <div
@@ -19,5 +19,3 @@ class Popover extends AbstractPopover {
     );
   }
 }
-
-export default Popover;

@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractCallout from './AbstractCallout';
+import { AbstractCallout } from './AbstractCallout';
 import './_callout.scss';
 
-class Callout extends AbstractCallout {
+export class Callout extends AbstractCallout {
   render() {
     return (
       <div
@@ -20,5 +20,3 @@ class Callout extends AbstractCallout {
     );
   }
 }
-
-export default Callout;

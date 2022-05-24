@@ -4,14 +4,14 @@ import { generateId } from '../common/utils';
 import { ToastEvent, ToastProps } from './types';
 import './_toast.scss';
 
-type ToastState = {
+export type ToastState = {
   toasts: Array<ToastEvent>;
   queue: Array<ToastEvent>;
 };
 
 export const toastEmitter: EventEmitter = new EventEmitter();
 
-abstract class AbstractToast extends React.Component<ToastProps, ToastState> {
+export abstract class AbstractToast extends React.Component<ToastProps, ToastState> {
   constructor(props: ToastProps) {
     super(props);
     this.state = {
@@ -69,5 +69,3 @@ abstract class AbstractToast extends React.Component<ToastProps, ToastState> {
     return classList;
   }
 }
-
-export default AbstractToast;

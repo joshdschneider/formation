@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractCard from './AbstractCard';
+import { AbstractCard } from './AbstractCard';
 import './_card.scss';
 
-class Card extends AbstractCard {
+export class Card extends AbstractCard {
   render() {
     return (
       <div
@@ -16,5 +16,3 @@ class Card extends AbstractCard {
     );
   }
 }
-
-export default Card;

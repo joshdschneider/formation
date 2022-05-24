@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { RadioProps } from './types';
 
-abstract class AbstractRadio extends React.Component<RadioProps> {
+export abstract class AbstractRadio extends React.Component<RadioProps> {
   getClasses(): string {
     let classList = `radio-container`;
 
@@ -24,5 +24,3 @@ abstract class AbstractRadio extends React.Component<RadioProps> {
     return this.props.children;
   }
 }
-
-export default AbstractRadio;

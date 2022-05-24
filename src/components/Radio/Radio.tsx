@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractRadio from './AbstractRadio';
+import { AbstractRadio } from './AbstractRadio';
 import './_radio.scss';
 
-class Radio extends AbstractRadio {
+export class Radio extends AbstractRadio {
   render() {
     return (
       <label
@@ -28,5 +28,3 @@ class Radio extends AbstractRadio {
     );
   }
 }
-
-export default Radio;

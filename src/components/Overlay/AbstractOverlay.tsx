@@ -1,7 +1,7 @@
 import React, { createRef, RefObject } from 'react';
 import { OverlayProps } from './types';
 
-abstract class AbstractOverlay extends React.Component<OverlayProps> {
+export abstract class AbstractOverlay extends React.Component<OverlayProps> {
   overlay: RefObject<HTMLDivElement> = createRef();
   overlayInner: RefObject<HTMLDivElement> = createRef();
   page: HTMLElement = document.body;
@@ -95,5 +95,3 @@ abstract class AbstractOverlay extends React.Component<OverlayProps> {
     }
   }
 }
-
-export default AbstractOverlay;

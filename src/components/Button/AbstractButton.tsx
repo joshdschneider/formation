@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { ButtonProps } from './types';
-import Spinner from '../Spinner/Spinner';
+import { Spinner } from '../Spinner/Spinner';
 
-abstract class AbstractButton extends React.Component<ButtonProps> {
+export abstract class AbstractButton extends React.Component<ButtonProps> {
   getDisabled(): boolean {
     if (!!this.props.loading) {
       return true;
@@ -64,5 +64,3 @@ abstract class AbstractButton extends React.Component<ButtonProps> {
     return children;
   }
 }
-
-export default AbstractButton;

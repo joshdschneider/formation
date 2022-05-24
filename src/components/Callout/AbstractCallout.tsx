@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { CalloutProps } from './types';
-import Icon from '../Icon/Icon';
+import { Icon } from '../Icon/Icon';
 
-abstract class AbstractCallout extends React.Component<CalloutProps> {
+export abstract class AbstractCallout extends React.Component<CalloutProps> {
   getClasses(): string {
     let classList = 'callout';
 
@@ -37,5 +37,3 @@ abstract class AbstractCallout extends React.Component<CalloutProps> {
     return null;
   }
 }
-
-export default AbstractCallout;

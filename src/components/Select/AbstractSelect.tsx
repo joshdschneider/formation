@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { SelectProps } from './types';
-import Icon from '../Icon/Icon';
+import { Icon } from '../Icon/Icon';
 
-abstract class AbstractSelect extends React.Component<SelectProps> {
+export abstract class AbstractSelect extends React.Component<SelectProps> {
   getClasses(): string {
     let classList = `select`;
 
@@ -73,5 +73,3 @@ abstract class AbstractSelect extends React.Component<SelectProps> {
     );
   }
 }
-
-export default AbstractSelect;

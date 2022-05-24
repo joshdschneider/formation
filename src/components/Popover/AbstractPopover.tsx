@@ -10,7 +10,7 @@ type PopoverState = {
   popover?: Element;
 };
 
-abstract class AbstractPopover extends React.Component<PopoverProps, PopoverState> {
+export abstract class AbstractPopover extends React.Component<PopoverProps, PopoverState> {
   constructor(props: PopoverProps) {
     super(props);
     let t = this.props.type || 'popover';
@@ -150,5 +150,3 @@ abstract class AbstractPopover extends React.Component<PopoverProps, PopoverStat
     return this.state.id;
   }
 }
-
-export default AbstractPopover;

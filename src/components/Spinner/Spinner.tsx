@@ -1,11 +1,9 @@
 import React from 'react';
-import AbstractSpinner from './AbstractSpinner';
+import { AbstractSpinner } from './AbstractSpinner';
 import './_spinner.scss';
 
-class Spinner extends AbstractSpinner {
+export class Spinner extends AbstractSpinner {
   render() {
     return <div style={this.getStyles()} id={this.props.id} className={this.getClasses()} />;
   }
 }
-
-export default Spinner;

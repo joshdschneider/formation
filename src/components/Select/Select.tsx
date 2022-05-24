@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractSelect from './AbstractSelect';
+import { AbstractSelect } from './AbstractSelect';
 import './_select.scss';
 
-class Select extends AbstractSelect {
+export class Select extends AbstractSelect {
   render() {
     return (
       <span className={'select-container'}>
@@ -24,5 +24,3 @@ class Select extends AbstractSelect {
     );
   }
 }
-
-export default Select;

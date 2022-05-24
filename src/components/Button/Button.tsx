@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractButton from './AbstractButton';
+import { AbstractButton } from './AbstractButton';
 import './_button.scss';
 
-class Button extends AbstractButton {
+export class Button extends AbstractButton {
   render() {
     return (
       <button
@@ -21,5 +21,3 @@ class Button extends AbstractButton {
     );
   }
 }
-
-export default Button;

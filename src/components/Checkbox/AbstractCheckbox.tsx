@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { CheckboxProps } from './types';
 
-abstract class AbstractCheckbox extends React.Component<CheckboxProps> {
+export abstract class AbstractCheckbox extends React.Component<CheckboxProps> {
   getClasses(): string {
     let classList = `checkbox-container`;
 
@@ -24,5 +24,3 @@ abstract class AbstractCheckbox extends React.Component<CheckboxProps> {
     return this.props.children;
   }
 }
-
-export default AbstractCheckbox;

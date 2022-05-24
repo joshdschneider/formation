@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import { Position } from '../common/types';
-import Icon from '../Icon/Icon';
+import { Icon } from '../Icon/Icon';
 import { ToastBodyProps } from './types';
 
-abstract class AbstractToastBody extends React.Component<ToastBodyProps> {
+export abstract class AbstractToastBody extends React.Component<ToastBodyProps> {
   componentDidMount(): void {
     if (!!this.props.id) {
       let el = document.getElementById(this.props.id);
@@ -168,5 +168,3 @@ async function slideOut(el: HTMLElement, pos: Position): Promise<void> {
       return;
   }
 }
-
-export default AbstractToastBody;

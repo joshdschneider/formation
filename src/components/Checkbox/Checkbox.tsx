@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractCheckbox from './AbstractCheckbox';
+import { AbstractCheckbox } from './AbstractCheckbox';
 import './_checkbox.scss';
 
-class Checkbox extends AbstractCheckbox {
+export class Checkbox extends AbstractCheckbox {
   render() {
     return (
       <label className={this.getClasses()} style={this.props.style}>
@@ -23,5 +23,3 @@ class Checkbox extends AbstractCheckbox {
     );
   }
 }
-
-export default Checkbox;

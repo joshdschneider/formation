@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractTextArea from './AbstractTextArea';
+import { AbstractTextArea } from './AbstractTextArea';
 import './_textarea.scss';
 
-class TextArea extends AbstractTextArea {
+export class TextArea extends AbstractTextArea {
   render() {
     return (
       <textarea
@@ -24,5 +24,3 @@ class TextArea extends AbstractTextArea {
     );
   }
 }
-
-export default TextArea;

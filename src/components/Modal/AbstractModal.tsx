@@ -1,8 +1,8 @@
 import React, { createRef, ReactNode, RefObject } from 'react';
-import Icon from '../Icon/Icon';
+import { Icon } from '../Icon/Icon';
 import { ModalProps } from './types';
 
-abstract class AbstractModal extends React.Component<ModalProps> {
+export abstract class AbstractModal extends React.Component<ModalProps> {
   modal: RefObject<HTMLDivElement> = createRef();
 
   componentDidMount(): void {
@@ -65,5 +65,3 @@ abstract class AbstractModal extends React.Component<ModalProps> {
     return <div className={'modal-children'}>{this.props.children}</div>;
   }
 }
-
-export default AbstractModal;

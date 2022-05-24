@@ -2,7 +2,7 @@ import React from 'react';
 import { LabelProps } from './types';
 import './_label.scss';
 
-class Label extends React.Component<LabelProps> {
+export class Label extends React.Component<LabelProps> {
   getClasses(): string {
     let classList = `label`;
 
@@ -29,5 +29,3 @@ class Label extends React.Component<LabelProps> {
     );
   }
 }
-
-export default Label;

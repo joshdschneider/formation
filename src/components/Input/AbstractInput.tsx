@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { InputProps } from './types';
 
-abstract class AbstractInput extends React.Component<InputProps> {
+export abstract class AbstractInput extends React.Component<InputProps> {
   getClasses(): string {
     let classList = `input`;
 
@@ -37,5 +37,3 @@ abstract class AbstractInput extends React.Component<InputProps> {
     );
   }
 }
-
-export default AbstractInput;

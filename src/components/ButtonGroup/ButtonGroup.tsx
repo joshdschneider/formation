@@ -2,7 +2,7 @@ import React from 'react';
 import { ButtonGroupProps } from './types';
 import './_button_group.scss';
 
-class ButtonGroup extends React.Component<ButtonGroupProps> {
+export class ButtonGroup extends React.Component<ButtonGroupProps> {
   getClasses(): string {
     let classList = `button-group`;
 
@@ -30,5 +30,3 @@ class ButtonGroup extends React.Component<ButtonGroupProps> {
     );
   }
 }
-
-export default ButtonGroup;

@@ -1,2 +1,2 @@
-export { default } from './FileUpload';
+export { FileUpload } from './FileUpload';
 export { FileUploadProps } from './types';

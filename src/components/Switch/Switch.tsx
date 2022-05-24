@@ -1,8 +1,8 @@
 import React from 'react';
-import AbstractSwitch from './AbstractSwitch';
+import { AbstractSwitch } from './AbstractSwitch';
 import './_switch.scss';
 
-class Switch extends AbstractSwitch {
+export class Switch extends AbstractSwitch {
   render() {
     return (
       <label className={this.getClasses()}>
@@ -23,5 +23,3 @@ class Switch extends AbstractSwitch {
     );
   }
 }
-
-export default Switch;
