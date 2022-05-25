@@ -7,11 +7,11 @@ Build your frontend faster with Formation—20+ react-based UI components. Free 
 [**Read the documentation ▸**](http://formation.fyi/docs/)
 
 [**View the documentation repo ▸**](https://github.com/joshdschneider/docs)
-
+<br />
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/joshdschneider/docs/blob/main/LICENSE)
 [![npm latest package](https://img.shields.io/npm/v/@joshdschneider/formation/latest.svg)](https://www.npmjs.com/package/@joshdschneider/formation)
-
+<br />
 
 ## Installation
 
