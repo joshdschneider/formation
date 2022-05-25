@@ -4,7 +4,7 @@ Build your frontend faster with Formation—20+ react-based UI components. Free 
 
 [**Visit the website ▸**](http://formation.fyi/)
 
-[**Read the documentation ▸**](http://formation.fyi/)
+[**Read the documentation ▸**](http://formation.fyi/docs/)
 
 [**View the documentation repo ▸**](https://github.com/joshdschneider/docs)
 
