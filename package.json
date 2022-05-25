@@ -1,6 +1,6 @@
 {
   "name": "@joshdschneider/formation",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "React component library.",
   "author": "Josh Schneider",
   "license": "MIT",
@@ -32,8 +32,5 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/joshdschneider"
-  }
+  "types": "dist/index.d.ts"
 }
