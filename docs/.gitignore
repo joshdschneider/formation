@@ -8,8 +8,12 @@
 # testing
 /coverage
 
-# production
-/build
+# github pages
+/public
+/src
+package.json
+package-lock.json
+tsconfig.json
 
 # misc
 .DS_Store
