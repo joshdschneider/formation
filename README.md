@@ -1,3 +1,3 @@
 # Formation
 
-This page is a work in progress. 🫠
+Work in progress. 🫠
