@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$black: #111418;
+$white: #ffffff;
+$dark-gray1: #1c2127;
+$dark-gray2: #252a31;
+$dark-gray3: #2f343c;
+$dark-gray4: #383e47;
+$dark-gray5: #404854;
+$gray1: #5f6b7c;
+$gray2: #738091;
+$gray3: #8f99a8;
+$gray4: #abb3bf;
+$gray5: #c5cbd3;
+$light-gray1: #d3d8de;
+$light-gray2: #dce0e5;
+$light-gray3: #e5e8eb;
+$light-gray4: #edeff2;
+$light-gray5: #f6f7f9;
+$blue1: #184a90;
+$blue2: #215db0;
+$blue3: #2d72d2;
+$blue4: #4c90f0;
+$blue5: #8abbff;
+$green1: #165a36;
+$green2: #1c6e42;
+$green3: #238551;
+$green4: #32a467;
+$green5: #72ca9b;
+$orange1: #77450d;
+$orange2: #935610;
+$orange3: #c87619;
+$orange4: #ec9a3c;
+$orange5: #fbb360;
+$red1: #8e292c;
+$red2: #ac2f33;
+$red3: #cd4246;
+$red4: #e76a6e;
+$red5: #fa999c;
+
+$font-family: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+  'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+$font-size--small: 14px;
+$font-size--regular: 16px;
+$font-size--large: 18px;
+
+$border-radius--small: 8px;
+$border-radius--regular: 10px;
+$border-radius--large: 12px;
+
+$default-transition: 0.1s;
+$delayed-transition: 0.2s;
+
+$box-shadow-light: 0 2px 2px rgba(0, 0, 0, 0.04);
+$box-shadow-dark: 0 0 transparent;
+
+$intents: 'default', 'primary', 'success', 'warning', 'danger';
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
