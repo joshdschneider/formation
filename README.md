@@ -6,6 +6,9 @@ Build your frontend faster with Formation—20+ react-based UI components. Free 
 
 [**View the docs repo ▸**](https://github.com/joshdschneider/docs)
 
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/joshdschneider/docs/blob/main/LICENSE)
+[![npm latest package](https://img.shields.io/npm/v/@joshdschneider/formation/latest.svg)](https://www.npmjs.com/package/@joshdschneider/formation)
+
 ## Installation
 
 Formation is available as an [npm package](https://www.npmjs.com/package/@joshdschneider/formation).
@@ -16,7 +19,7 @@ npm install @mui/material @emotion/react @emotion/styled
 
 ## Getting started
 
-Here is an example of a basic app using Material UI's `Button` component:
+Here is an example of a basic app using Formation's `Button` component:
 
 ```jsx
 import React from 'react';
