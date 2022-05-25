@@ -1,4 +1,4 @@
-<a href="https://formation.fyi/" rel="noopener" target="_blank"><img width="100" height="100" src="https://formation.fyi/logo512.png" alt="MUI logo"></a>
+<a href="https://formation.fyi/" rel="noopener" target="_blank"><img width="125" height="125" src="https://formation.fyi/logo512.png" alt="MUI logo"></a>
 
 # [Formation](https://formation.fyi/)
 
