@@ -20,7 +20,7 @@ Build your frontend faster with Formation—20+ react-based UI components. Free 
 Formation is available as an [npm package](https://www.npmjs.com/package/@joshdschneider/formation).
 
 ```sh
-npm install @mui/material @emotion/react @emotion/styled
+npm install @joshdschneider/formation
 ```
 
 ## Getting started
