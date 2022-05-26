@@ -22,7 +22,7 @@ $themes: (
     border-color--success: $green1,
     border-color--warning: $orange1,
     border-color--danger: $red1,
-    box-shadow: 0 8px 24px rgb(0, 0, 0, .2),
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.2),
   ),
   dark: (
     text-color--default: $white,
@@ -45,7 +45,7 @@ $themes: (
     border-color--success: $green4,
     border-color--warning: $orange4,
     border-color--danger: $red4,
-    box-shadow: 0 8px 24px rgb(0, 0, 0, .4),
+    box-shadow: 0 8px 24px rgb(0, 0, 0, 0.4),
   ),
 );
 
@@ -55,16 +55,8 @@ $themes: (
   align-items: center;
   position: fixed;
   z-index: 12;
-  pointer-events: none;
   transition: 0.2s;
-}
-
-.toast {
-  display: inline-flex;
-  position: fixed;
-  z-index: 13;
-  pointer-events: all;
-  transition: 0.2s;
+  width: 100%;
 }
 
 .toast-body {

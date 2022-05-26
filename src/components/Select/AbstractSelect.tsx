@@ -32,12 +32,20 @@ export abstract class AbstractSelect extends React.Component<SelectProps> {
             return (
               <optgroup key={i} label={item.label}>
                 {item.options.map((o, n) => {
-                  return <option key={n} label={o.label || o.value} value={o.value} />;
+                  return (
+                    <option key={n} label={o.label || o.value} value={o.value}>
+                      {o.label || o.value}
+                    </option>
+                  );
                 })}
               </optgroup>
             );
           } else if ('value' in item) {
-            return <option key={i} label={item.label || item.value} value={item.value} />;
+            return (
+              <option key={i} label={item.label || item.value} value={item.value}>
+                {item.label || item.value}
+              </option>
+            );
           } else {
             return null;
           }
