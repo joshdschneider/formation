@@ -1,21 +1,19 @@
-import { CSSProperties, MouseEventHandler, ReactNode, RefObject } from 'react';
+import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 import { Size, Intent } from '../common/types';
 
-export type ButtonProps = {
-  type?: 'button' | 'submit' | 'reset';
-  id?: string;
-  name?: string;
-  value?: string;
-  disabled?: boolean;
+export type NativeAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement>;
+export type NativeButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+export type CustomButtonProps = {
   loading?: boolean;
   minimal?: boolean;
+  disabled?: boolean;
   size?: Size;
   intent?: Intent;
-  className?: string;
-  style?: CSSProperties;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-  ref?: RefObject<HTMLButtonElement>;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
-  children?: ReactNode;
+  className?: string;
+  children: ReactNode;
 };
+
+export type ButtonProps = CustomButtonProps & NativeButtonProps;
+export type AnchorProps = CustomButtonProps & NativeAnchorProps;
