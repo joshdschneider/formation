@@ -41,11 +41,11 @@ export abstract class AbstractButton extends React.Component<ButtonProps> {
     let children = (
       <>
         {this.props.leftIcon ? (
-          <span className='button-icon--left'>{this.props.leftIcon}</span>
+          <span className="button-icon--left">{this.props.leftIcon}</span>
         ) : null}
         {this.props.children}
         {this.props.rightIcon ? (
-          <span className='button-icon--right'>{this.props.rightIcon}</span>
+          <span className="button-icon--right">{this.props.rightIcon}</span>
         ) : null}
       </>
     );
@@ -53,10 +53,13 @@ export abstract class AbstractButton extends React.Component<ButtonProps> {
     if (!!this.props.loading) {
       return (
         <>
-          <span className='spinner--overlay'>
-            <Spinner intent={this.props.intent || 'default'} size={this.props.size} />
+          <span className="spinner--overlay">
+            <Spinner
+              intent={this.props.intent || 'default'}
+              size={this.props.size}
+            />
           </span>
-          <span className='visibility--hidden'>{children}</span>
+          <span className="visibility--hidden">{children}</span>
         </>
       );
     }

@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "rollup": "rollup -c",
-    "clean": "rm -rf dist/*"
+    "clean": "rm -rf dist/*",
+    "lint": "eslint src/ --ext .ts,.tsx --config .eslintrc"
   },
   "devDependencies": {
     "@popperjs/core": "^2.11.5",
@@ -16,7 +17,19 @@
     "@rollup/plugin-typescript": "^8.3.0",
     "@types/react": "^18.0.3",
     "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "events": "^3.3.0",
+    "prettier": "^2.6.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "rollup": "^2.60.0",
