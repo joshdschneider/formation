@@ -4,10 +4,25 @@ import './_button.scss';
 
 export class Button extends AbstractButton {
   render() {
-    return (
-      <button className={this.getClasses()} disabled={this.getDisabled()}>
-        {this.getChildren()}
-      </button>
-    );
+    const {
+      loading,
+      minimal,
+      disabled,
+      size,
+      intent,
+      leftIcon,
+      rightIcon,
+      className,
+      children,
+      ...rest
+    } = this.props;
+
+    const targetProps = {
+      className: this.getClasses(),
+      disabled: this.getDisabled(),
+      ...rest,
+    };
+
+    return <button {...targetProps}>{this.getChildren()}</button>;
   }
 }

@@ -1,13 +1,14 @@
-import { CSSProperties, ReactNode, RefObject } from 'react';
+import { HTMLAttributes, ReactNode, RefObject } from 'react';
 import { Intent } from '../common/types';
 
-export type CalloutProps = {
+export type NativeCalloutProps = HTMLAttributes<HTMLDivElement>;
+
+export type CustomCalloutProps = {
   intent?: Intent;
   title?: string;
   icon?: string;
-  id?: string;
   className?: string;
-  style?: CSSProperties;
-  ref?: RefObject<HTMLDivElement>;
   children?: ReactNode;
 };
+
+export type CalloutProps = CustomCalloutProps & NativeCalloutProps;
