@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode, RefObject } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 import { Intent } from '../common/types';
 
 export type NativeCalloutProps = HTMLAttributes<HTMLDivElement>;

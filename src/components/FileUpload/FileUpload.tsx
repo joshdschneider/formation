@@ -10,28 +10,32 @@ export class FileUpload extends AbstractFileUpload {
   }
 
   render() {
+    const {
+      value,
+      width,
+      disabled,
+      fileUploadSize,
+      intent,
+      className,
+      ...rest
+    } = this.props;
+
     return (
       <div className={'file-upload-container'}>
         <label className={this.getClasses()}>
           <input
             type={'file'}
-            id={this.props.id}
-            name={this.props.name}
-            disabled={this.props.disabled}
-            accept={this.props.accept}
-            multiple={this.props.multiple}
-            required={this.props.required}
+            value={value}
+            disabled={disabled}
             className={'file-input--hidden'}
-            style={this.props.style}
-            onChange={this.props.onChage}
-            ref={this.props.ref}
+            {...rest}
           />
           <span className={'file-input--inner'} style={this.getWidth()}>
             {this.getFileName()}
             <Button
-              intent={this.props.intent}
-              disabled={this.props.disabled}
-              size={this.props.size}
+              intent={intent}
+              disabled={disabled}
+              size={fileUploadSize}
               onClick={this.handleClick}
             >
               Browse

@@ -1,18 +1,10 @@
-import { CSSProperties, FormEventHandler, ReactNode, RefObject } from 'react';
+import { FormHTMLAttributes, ReactNode } from 'react';
 
-export type FormProps = {
-  id?: string;
+export type NativeFormProps = FormHTMLAttributes<HTMLFormElement>;
+
+export type CustomFormProps = {
   className?: string;
-  style?: CSSProperties;
-  acceptCharset?: string;
-  action?: string;
-  autoComplete?: string;
-  encType?: string;
-  method?: string;
-  name?: string;
-  noValidate?: boolean;
-  target?: string;
-  onSubmit?: FormEventHandler<HTMLFormElement>;
-  ref?: RefObject<HTMLFormElement>;
   children?: ReactNode;
 };
+
+export type FormProps = CustomFormProps & NativeFormProps;
