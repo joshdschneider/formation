@@ -4,9 +4,10 @@ import { SwitchProps } from './types';
 export abstract class AbstractSwitch extends React.Component<SwitchProps> {
   getClasses(): string {
     let classList = `switch-container`;
+    let size = this.props.switchSize;
 
-    if (!!this.props.size && this.props.size !== 'regular') {
-      classList += ` switch-size--${this.props.size}`;
+    if (!!size && size !== 'regular') {
+      classList += ` switch-size--${size}`;
     }
 
     if (!!this.props.className) {

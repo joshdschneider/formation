@@ -1,21 +1,17 @@
-import { ChangeEventHandler, CSSProperties, RefObject } from 'react';
+import { SelectHTMLAttributes } from 'react';
 import { Intent, Size } from '../common/types';
 
-export type SelectProps = {
-  id?: string;
-  name?: string;
-  value?: string;
-  disabled?: boolean;
-  required?: boolean;
-  size?: Size;
+export type NativeSelectProps = SelectHTMLAttributes<HTMLSelectElement>;
+
+export type CustomSelectProps = {
+  selectSize?: Size;
   minimal?: boolean;
   intent?: Intent;
   className?: string;
-  style?: CSSProperties;
-  onChange?: ChangeEventHandler<HTMLSelectElement>;
-  ref?: RefObject<HTMLSelectElement>;
   options?: Array<OptionGroup | Option>;
 };
+
+export type SelectProps = CustomSelectProps & NativeSelectProps;
 
 export type OptionGroup = {
   label: string;
