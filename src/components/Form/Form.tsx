@@ -17,6 +17,6 @@ export class Form extends React.Component<FormProps> {
       ...rest,
     };
 
-    return <form {...targetProps}>{this.props.children}</form>;
+    return <form {...targetProps}>{children}</form>;
   }
 }

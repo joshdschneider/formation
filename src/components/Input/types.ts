@@ -1,20 +1,13 @@
-import { ChangeEventHandler, CSSProperties, ReactNode, RefObject } from 'react';
+import { InputHTMLAttributes, ReactNode } from 'react';
 import { Size } from '../common/types';
 
-export type InputProps = {
-  id?: string;
-  name?: string;
-  value?: string;
-  disabled?: boolean;
-  autofocus?: boolean;
-  placeholder?: string;
-  readonly?: boolean;
-  required?: boolean;
-  size?: Size;
-  className?: string;
-  style?: CSSProperties;
+export type NativeInputProps = InputHTMLAttributes<HTMLInputElement>;
+
+export type CustomInputProps = {
+  inputSize?: Size;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  ref?: RefObject<HTMLInputElement>;
+  className?: string;
 };
+
+export type InputProps = CustomInputProps & NativeInputProps;

@@ -22,10 +22,13 @@ export class Label extends React.Component<LabelProps> {
   }
 
   render() {
-    return (
-      <label id={this.props.id} htmlFor={this.props.for} className={this.getClasses()}>
-        {this.props.children}
-      </label>
-    );
+    const { inline, size, className, children, ...rest } = this.props;
+
+    const targetProps = {
+      className: this.getClasses(),
+      ...rest,
+    };
+
+    return <label {...targetProps}>{children}</label>;
   }
 }

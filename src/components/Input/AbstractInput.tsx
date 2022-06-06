@@ -4,9 +4,10 @@ import { InputProps } from './types';
 export abstract class AbstractInput extends React.Component<InputProps> {
   getClasses(): string {
     let classList = `input`;
+    let size = this.props.inputSize;
 
-    if (!!this.props.size && this.props.size !== 'regular') {
-      classList += ` input-size--${this.props.size}`;
+    if (!!size && size !== 'regular') {
+      classList += ` input-size--${size}`;
     }
 
     if (!!this.props.leftIcon) {
@@ -28,10 +29,14 @@ export abstract class AbstractInput extends React.Component<InputProps> {
     return (
       <>
         {this.props.leftIcon ? (
-          <span className={`input-icon input-icon--left`}>{this.props.leftIcon}</span>
+          <span className={`input-icon input-icon--left`}>
+            {this.props.leftIcon}
+          </span>
         ) : null}
         {this.props.rightIcon ? (
-          <span className={`input-icon input-icon--right`}>{this.props.rightIcon}</span>
+          <span className={`input-icon input-icon--right`}>
+            {this.props.rightIcon}
+          </span>
         ) : null}
       </>
     );
