@@ -4,15 +4,13 @@ import './_card.scss';
 
 export class Card extends AbstractCard {
   render() {
-    return (
-      <div
-        id={this.props.id}
-        className={this.getClasses()}
-        style={this.props.style}
-        ref={this.props.ref}
-      >
-        {this.props.children}
-      </div>
-    );
+    const { interactive, className, children, ...rest } = this.props;
+
+    const targetProps = {
+      className: this.getClasses(),
+      ...rest,
+    };
+
+    return <div {...targetProps}>{children}</div>;
   }
 }

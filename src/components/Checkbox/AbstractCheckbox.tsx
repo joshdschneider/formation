@@ -4,9 +4,10 @@ import { CheckboxProps } from './types';
 export abstract class AbstractCheckbox extends React.Component<CheckboxProps> {
   getClasses(): string {
     let classList = `checkbox-container`;
+    let size = this.props.checkboxSize;
 
-    if (!!this.props.size && this.props.size !== 'regular') {
-      classList += ` checkbox-size--${this.props.size}`;
+    if (!!size && size !== 'regular') {
+      classList += ` checkbox-size--${size}`;
     }
 
     if (!!this.props.className) {

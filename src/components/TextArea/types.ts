@@ -1,21 +1,12 @@
-import { ChangeEventHandler, CSSProperties, RefObject } from 'react';
+import { TextareaHTMLAttributes } from 'react';
 import { Size } from '../common/types';
 
-export type TextAreaProps = {
-  id?: string;
-  name?: string;
-  value?: string;
-  disabled?: boolean;
-  autofocus?: boolean;
+export type NativeTextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
+
+export type CustomTextAreaProps = {
   resizable?: boolean;
-  cols?: number;
-  rows?: number;
-  placeholder?: string;
-  readonly?: boolean;
-  required?: boolean;
-  size?: Size;
+  textAreaSize?: Size;
   className?: string;
-  style?: CSSProperties;
-  onChage?: ChangeEventHandler<HTMLTextAreaElement>;
-  ref?: RefObject<HTMLTextAreaElement>;
 };
+
+export type TextAreaProps = CustomTextAreaProps & NativeTextAreaProps;

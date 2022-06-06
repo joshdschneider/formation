@@ -1,16 +1,14 @@
-import { ChangeEventHandler, ReactNode, RefObject } from 'react';
+import { CSSProperties, InputHTMLAttributes, ReactNode } from 'react';
 import { Size } from '../common/types';
 
-export type SwitchProps = {
-  id?: string;
-  name?: string;
-  checked?: boolean;
+export type NativeSwitchProps = InputHTMLAttributes<HTMLInputElement>;
+
+export type CustomSwitchProps = {
+  switchSize?: Size;
   label?: string;
-  disabled?: boolean;
-  required?: boolean;
-  size?: Size;
   className?: string;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  ref?: RefObject<HTMLInputElement>;
+  style?: CSSProperties;
   children?: ReactNode;
 };
+
+export type SwitchProps = CustomSwitchProps & NativeSwitchProps;

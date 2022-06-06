@@ -4,23 +4,13 @@ import './_textarea.scss';
 
 export class TextArea extends AbstractTextArea {
   render() {
-    return (
-      <textarea
-        id={this.props.id}
-        name={this.props.name}
-        value={this.props.value}
-        disabled={this.props.disabled}
-        autoFocus={this.props.autofocus}
-        placeholder={this.props.placeholder}
-        cols={this.props.cols}
-        rows={this.props.rows}
-        readOnly={this.props.readonly}
-        required={this.props.required}
-        className={this.getClasses()}
-        style={this.props.style}
-        onChange={this.props.onChage}
-        ref={this.props.ref}
-      />
-    );
+    const { resizable, textAreaSize, className, ...rest } = this.props;
+
+    const targetProps = {
+      className: this.getClasses(),
+      ...rest,
+    };
+
+    return <textarea {...targetProps} />;
   }
 }

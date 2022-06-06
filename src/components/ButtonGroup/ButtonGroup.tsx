@@ -18,15 +18,13 @@ export class ButtonGroup extends React.Component<ButtonGroupProps> {
   }
 
   render() {
-    return (
-      <div
-        id={this.props.id}
-        className={this.getClasses()}
-        ref={this.props.ref}
-        style={this.props.style}
-      >
-        {this.props.children}
-      </div>
-    );
+    const { size, className, children, ...rest } = this.props;
+
+    const targetProps = {
+      className: this.getClasses(),
+      ...rest,
+    };
+
+    return <div {...targetProps}>{children}</div>;
   }
 }

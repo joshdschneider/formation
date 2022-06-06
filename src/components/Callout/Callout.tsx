@@ -4,17 +4,19 @@ import './_callout.scss';
 
 export class Callout extends AbstractCallout {
   render() {
+    const { intent, title, icon, className, children, ...rest } = this.props;
+
+    const targetProps = {
+      className: this.getClasses(),
+      ...rest,
+    };
+
     return (
-      <div
-        id={this.props.id}
-        className={this.getClasses()}
-        style={this.props.style}
-        ref={this.props.ref}
-      >
+      <div {...targetProps}>
         {this.getIcon()}
         <div className={'callout-body'}>
           {this.getTitle()}
-          <div className={'callout-children'}>{this.props.children}</div>
+          <div className={'callout-children'}>{children}</div>
         </div>
       </div>
     );

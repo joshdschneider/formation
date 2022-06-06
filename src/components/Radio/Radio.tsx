@@ -4,24 +4,21 @@ import './_radio.scss';
 
 export class Radio extends AbstractRadio {
   render() {
+    const { id, radioSize, label, className, style, children, ...rest } =
+      this.props;
+
+    const targetProps = {
+      id,
+      ...rest,
+    };
+
     return (
       <label
         className={this.getClasses()}
-        htmlFor={this.props.id || undefined}
-        style={this.props.style}
+        htmlFor={id ?? undefined}
+        style={style}
       >
-        <input
-          type={'radio'}
-          id={this.props.id}
-          name={this.props.name}
-          value={this.props.value}
-          checked={this.props.checked}
-          disabled={this.props.disabled}
-          required={this.props.required}
-          className={'radio'}
-          onChange={this.props.onChange}
-          ref={this.props.ref}
-        />
+        <input type={'radio'} {...targetProps} />
         <span className={'radio-overlay'} />
         <span className={'radio-label'}>{this.getLabel()}</span>
       </label>

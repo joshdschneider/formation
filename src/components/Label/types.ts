@@ -1,11 +1,13 @@
-import { ReactNode } from 'react';
+import { LabelHTMLAttributes, ReactNode } from 'react';
 import { Size } from '../common/types';
 
-export type LabelProps = {
-  id?: string;
-  for?: string;
+export type NativeLabelProps = LabelHTMLAttributes<HTMLLabelElement>;
+
+export type CustomLabelProps = {
   inline?: boolean;
-  className?: string;
   size?: Size;
+  className?: string;
   children?: ReactNode;
 };
+
+export type LabelProps = CustomLabelProps & NativeLabelProps;

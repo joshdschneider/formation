@@ -4,9 +4,10 @@ import { RadioProps } from './types';
 export abstract class AbstractRadio extends React.Component<RadioProps> {
   getClasses(): string {
     let classList = `radio-container`;
+    let size = this.props.radioSize;
 
-    if (!!this.props.size && this.props.size !== 'regular') {
-      classList += ` radio-size--${this.props.size}`;
+    if (!!size && size !== 'regular') {
+      classList += ` radio-size--${size}`;
     }
 
     if (!!this.props.className) {

@@ -1,18 +1,15 @@
-import { ChangeEventHandler, CSSProperties, ReactNode, RefObject } from 'react';
+import { InputHTMLAttributes, CSSProperties, ReactNode } from 'react';
 import { Size } from '../common/types';
 
-export type RadioProps = {
+export type NativeRadioProps = InputHTMLAttributes<HTMLInputElement>;
+
+export type CustomRadioProps = {
   id?: string;
-  name?: string;
-  value?: string;
-  checked?: boolean;
+  radioSize?: Size;
   label?: string;
-  disabled?: boolean;
-  required?: boolean;
-  size?: Size;
   className?: string;
   style?: CSSProperties;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  ref?: RefObject<HTMLInputElement>;
   children?: ReactNode;
 };
+
+export type RadioProps = CustomRadioProps & NativeRadioProps;

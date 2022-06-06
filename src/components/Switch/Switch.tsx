@@ -4,19 +4,12 @@ import './_switch.scss';
 
 export class Switch extends AbstractSwitch {
   render() {
+    const { switchSize, label, className, style, children, ...rest } =
+      this.props;
+
     return (
-      <label className={this.getClasses()}>
-        <input
-          type={'checkbox'}
-          id={this.props.id}
-          name={this.props.name}
-          checked={this.props.checked}
-          disabled={this.props.disabled}
-          required={this.props.required}
-          className={'switch'}
-          onChange={this.props.onChange}
-          ref={this.props.ref}
-        />
+      <label className={this.getClasses()} style={style}>
+        <input type={'checkbox'} className={'switch'} {...rest} />
         <span className={'switch-overlay'} />
         <span className={'switch-label'}>{this.getLabel()}</span>
       </label>

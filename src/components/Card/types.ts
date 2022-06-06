@@ -1,10 +1,11 @@
-import { CSSProperties, ReactNode, RefObject } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-export type CardProps = {
+export type NativeCardProps = HTMLAttributes<HTMLDivElement>;
+
+export type CustomCardProps = {
   interactive?: boolean;
-  id?: string;
   className?: string;
-  style?: CSSProperties;
-  ref?: RefObject<HTMLDivElement>;
   children?: ReactNode;
 };
+
+export type CardProps = CustomCardProps & NativeCardProps;

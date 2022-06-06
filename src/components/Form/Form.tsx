@@ -10,24 +10,13 @@ export class Form extends React.Component<FormProps> {
   }
 
   render() {
-    return (
-      <form
-        id={this.props.id}
-        className={this.getClasses()}
-        style={this.props.style}
-        acceptCharset={this.props.acceptCharset}
-        action={this.props.action}
-        autoComplete={this.props.autoComplete}
-        encType={this.props.encType}
-        method={this.props.method}
-        name={this.props.name}
-        noValidate={this.props.noValidate}
-        target={this.props.target}
-        ref={this.props.ref}
-        onSubmit={this.props.onSubmit}
-      >
-        {this.props.children}
-      </form>
-    );
+    const { className, children, ...rest } = this.props;
+
+    const targetProps = {
+      className: this.getClasses(),
+      ...rest,
+    };
+
+    return <form {...targetProps}>{children}</form>;
   }
 }

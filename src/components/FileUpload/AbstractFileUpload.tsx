@@ -4,9 +4,10 @@ import { FileUploadProps } from './types';
 export abstract class AbstractFileUpload extends React.Component<FileUploadProps> {
   getClasses(): string {
     let classList = `file-upload`;
+    let size = this.props.fileUploadSize;
 
-    if (!!this.props.size && this.props.size !== 'regular') {
-      classList += ` file-upload-size--${this.props.size}`;
+    if (!!size && size !== 'regular') {
+      classList += ` file-upload-size--${size}`;
     }
 
     if (!!this.props.className) {
