@@ -1,9 +1,10 @@
-import React from 'react';
-import { AbstractButton } from './AbstractButton';
+import React, { FC, forwardRef } from 'react';
+import { ButtonProps } from './types';
+import { Spinner } from '../Spinner/Spinner';
 import './_button.scss';
 
-export class Button extends AbstractButton {
-  render() {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (props, ref) => {
     const {
       loading,
       minimal,
@@ -15,14 +16,75 @@ export class Button extends AbstractButton {
       className,
       children,
       ...rest
-    } = this.props;
+    } = props;
 
     const targetProps = {
-      className: this.getClasses(),
-      disabled: this.getDisabled(),
+      ref,
+      className: getClassesFromProps(props),
+      disabled: loading || disabled,
+      children: <ButtonContent {...props}>{children}</ButtonContent>,
       ...rest,
     };
 
-    return <button {...targetProps}>{this.getChildren()}</button>;
+    return <button {...targetProps} />;
+  },
+);
+
+const ButtonContent: FC<ButtonProps> = ({
+  loading,
+  size,
+  intent,
+  leftIcon,
+  rightIcon,
+  children,
+}) => {
+  const inner = (
+    <>
+      {leftIcon ? <span className="button-icon--left">{leftIcon}</span> : null}
+      {children}
+      {rightIcon ? (
+        <span className="button-icon--right">{rightIcon}</span>
+      ) : null}
+    </>
+  );
+
+  if (!!loading) {
+    return (
+      <>
+        <span className="spinner--overlay">
+          <Spinner intent={intent || 'default'} size={size} />
+        </span>
+        <span className="visibility--hidden">{inner}</span>
+      </>
+    );
+  } else {
+    return inner;
   }
+};
+
+function getClassesFromProps({
+  size,
+  intent,
+  minimal,
+  className,
+}: ButtonProps): string {
+  const classList = ['button'];
+
+  if (!!size && size !== 'regular') {
+    classList.push(`button-size--${size}`);
+  }
+
+  if (!!intent && intent !== 'default') {
+    classList.push(`button-intent--${intent}`);
+  }
+
+  if (!!minimal) {
+    classList.push('button--minimal');
+  }
+
+  if (!!className) {
+    classList.push(className);
+  }
+
+  return classList.join(' ');
 }
